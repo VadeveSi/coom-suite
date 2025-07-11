@@ -1,14 +1,12 @@
-# Generated from Model.g4 by ANTLR 4.9
+# Generated from Model.g4 by ANTLR 4.9.3
 # encoding: utf-8
-import sys
-from io import StringIO
-
 from antlr4 import *
-
+from io import StringIO
+import sys
 if sys.version_info[1] > 5:
-    from typing import TextIO
+	from typing import TextIO
 else:
-    from typing.io import TextIO
+	from typing.io import TextIO
 
 
 def serializedATN():
@@ -19,8 +17,8 @@ def serializedATN():
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
         buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31")
         buf.write("\t\31\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36")
-        buf.write('\4\37\t\37\4 \t \4!\t!\4"\t"\4#\t#\4$\t$\4%\t%\4&\t')
-        buf.write("&\4'\t'\4(\t(\4)\t)\4*\t*\4+\t+\4,\t,\4-\t-\4.\t.\4")
+        buf.write("\4\37\t\37\4 \t \4!\t!\4\"\t\"\4#\t#\4$\t$\4%\t%\4&\t")
+        buf.write("&\4\'\t\'\4(\t(\4)\t)\4*\t*\4+\t+\4,\t,\4-\t-\4.\t.\4")
         buf.write("/\t/\4\60\t\60\4\61\t\61\4\62\t\62\4\63\t\63\4\64\t\64")
         buf.write("\4\65\t\65\4\66\t\66\4\67\t\67\48\t8\3\2\3\2\3\2\3\2\7")
         buf.write("\2u\n\2\f\2\16\2x\13\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3")
@@ -61,10 +59,10 @@ def serializedATN():
         buf.write("\5\35\u01b9\n\35\3\35\3\35\3\36\3\36\3\36\5\36\u01c0\n")
         buf.write("\36\3\36\3\36\7\36\u01c4\n\36\f\36\16\36\u01c7\13\36\3")
         buf.write("\37\3\37\3\37\5\37\u01cc\n\37\3\37\3\37\3 \3 \3 \3!\3")
-        buf.write('!\3!\5!\u01d6\n!\3!\3!\3"\3"\3#\3#\3#\7#\u01df\n#\f')
+        buf.write("!\3!\5!\u01d6\n!\3!\3!\3\"\3\"\3#\3#\3#\7#\u01df\n#\f")
         buf.write("#\16#\u01e2\13#\3$\3$\3$\7$\u01e7\n$\f$\16$\u01ea\13$")
         buf.write("\3%\3%\3%\3%\3%\3%\3%\5%\u01f3\n%\3&\3&\7&\u01f7\n&\f")
-        buf.write("&\16&\u01fa\13&\3'\3'\3'\3(\3(\3)\3)\3)\7)\u0204\n")
+        buf.write("&\16&\u01fa\13&\3\'\3\'\3\'\3(\3(\3)\3)\3)\7)\u0204\n")
         buf.write(")\f)\16)\u0207\13)\3*\3*\3*\7*\u020c\n*\f*\16*\u020f\13")
         buf.write("*\3+\3+\3+\7+\u0214\n+\f+\16+\u0217\13+\3,\3,\3,\7,\u021c")
         buf.write("\n,\f,\16,\u021f\13,\3-\3-\3-\7-\u0224\n-\f-\16-\u0227")
@@ -76,15 +74,15 @@ def serializedATN():
         buf.write("\64\3\64\5\64\u025f\n\64\3\64\3\64\5\64\u0263\n\64\3\65")
         buf.write("\3\65\3\65\3\65\5\65\u0269\n\65\5\65\u026b\n\65\3\66\3")
         buf.write("\66\3\67\3\67\5\67\u0271\n\67\38\38\38\2\29\2\4\6\b\n")
-        buf.write('\f\16\20\22\24\26\30\32\34\36 "$&(*,.\60\62\64\668:<')
+        buf.write("\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<")
         buf.write(">@BDFHJLNPRTVXZ\\^`bdfhjln\2\r\4\2KKMM\5\2\f\fKKMM\4\2")
-        buf.write('BBJN\3\2\26\27\3\2\35\36\3\2 !\3\2"$\3\2&*\4\2\62\62')
+        buf.write("BBJN\3\2\26\27\3\2\35\36\3\2 !\3\2\"$\3\2&*\4\2\62\62")
         buf.write("KL\4\2BBIJ\4\2\16\16\67A\2\u029b\2v\3\2\2\2\4{\3\2\2\2")
         buf.write("\6\u008a\3\2\2\2\b\u009a\3\2\2\2\n\u00b0\3\2\2\2\f\u00bd")
         buf.write("\3\2\2\2\16\u00c4\3\2\2\2\20\u00c7\3\2\2\2\22\u00e2\3")
         buf.write("\2\2\2\24\u00e4\3\2\2\2\26\u00f1\3\2\2\2\30\u00f8\3\2")
         buf.write("\2\2\32\u00fb\3\2\2\2\34\u00fe\3\2\2\2\36\u0104\3\2\2")
-        buf.write('\2 \u011a\3\2\2\2"\u0122\3\2\2\2$\u0138\3\2\2\2&\u015e')
+        buf.write("\2 \u011a\3\2\2\2\"\u0122\3\2\2\2$\u0138\3\2\2\2&\u015e")
         buf.write("\3\2\2\2(\u0161\3\2\2\2*\u0164\3\2\2\2,\u016a\3\2\2\2")
         buf.write(".\u0183\3\2\2\2\60\u01a0\3\2\2\2\62\u01a3\3\2\2\2\64\u01a7")
         buf.write("\3\2\2\2\66\u01b0\3\2\2\28\u01b5\3\2\2\2:\u01bc\3\2\2")
@@ -160,8 +158,8 @@ def serializedATN():
         buf.write("\5 \21\2\u0106\u0107\5l\67\2\u0107\u0109\3\2\2\2\u0108")
         buf.write("\u0105\3\2\2\2\u0109\u010c\3\2\2\2\u010a\u0108\3\2\2\2")
         buf.write("\u010a\u010b\3\2\2\2\u010b\u0116\3\2\2\2\u010c\u010a\3")
-        buf.write('\2\2\2\u010d\u0113\5"\22\2\u010e\u010f\5l\67\2\u010f')
-        buf.write('\u0110\5"\22\2\u0110\u0112\3\2\2\2\u0111\u010e\3\2\2')
+        buf.write("\2\2\2\u010d\u0113\5\"\22\2\u010e\u010f\5l\67\2\u010f")
+        buf.write("\u0110\5\"\22\2\u0110\u0112\3\2\2\2\u0111\u010e\3\2\2")
         buf.write("\2\u0112\u0115\3\2\2\2\u0113\u0111\3\2\2\2\u0113\u0114")
         buf.write("\3\2\2\2\u0114\u0117\3\2\2\2\u0115\u0113\3\2\2\2\u0116")
         buf.write("\u010d\3\2\2\2\u0116\u0117\3\2\2\2\u0117\u0118\3\2\2\2")
@@ -191,14 +189,14 @@ def serializedATN():
         buf.write("\u014a\u014b\5l\67\2\u014b\u014d\3\2\2\2\u014c\u0149\3")
         buf.write("\2\2\2\u014d\u0150\3\2\2\2\u014e\u014c\3\2\2\2\u014e\u014f")
         buf.write("\3\2\2\2\u014f\u015a\3\2\2\2\u0150\u014e\3\2\2\2\u0151")
-        buf.write('\u0157\5"\22\2\u0152\u0153\5l\67\2\u0153\u0154\5"\22')
+        buf.write("\u0157\5\"\22\2\u0152\u0153\5l\67\2\u0153\u0154\5\"\22")
         buf.write("\2\u0154\u0156\3\2\2\2\u0155\u0152\3\2\2\2\u0156\u0159")
         buf.write("\3\2\2\2\u0157\u0155\3\2\2\2\u0157\u0158\3\2\2\2\u0158")
         buf.write("\u015b\3\2\2\2\u0159\u0157\3\2\2\2\u015a\u0151\3\2\2\2")
         buf.write("\u015a\u015b\3\2\2\2\u015b\u015c\3\2\2\2\u015c\u015d\7")
         buf.write("\5\2\2\u015d%\3\2\2\2\u015e\u015f\7\33\2\2\u015f\u0160")
-        buf.write("\5j\66\2\u0160'\3\2\2\2\u0161\u0162\7E\2\2\u0162\u0163")
-        buf.write('\5B"\2\u0163)\3\2\2\2\u0164\u0165\7K\2\2\u0165\u0166')
+        buf.write("\5j\66\2\u0160\'\3\2\2\2\u0161\u0162\7E\2\2\u0162\u0163")
+        buf.write("\5B\"\2\u0163)\3\2\2\2\u0164\u0165\7K\2\2\u0165\u0166")
         buf.write("\7\23\2\2\u0166\u0167\7K\2\2\u0167\u0168\7\23\2\2\u0168")
         buf.write("\u0169\7K\2\2\u0169+\3\2\2\2\u016a\u016b\7\34\2\2\u016b")
         buf.write("\u016c\7\17\2\2\u016c\u0173\5N(\2\u016d\u016f\7\20\2\2")
@@ -243,10 +241,10 @@ def serializedATN():
         buf.write("\u01cb\7%\2\2\u01c9\u01ca\7\n\2\2\u01ca\u01cc\t\t\2\2")
         buf.write("\u01cb\u01c9\3\2\2\2\u01cb\u01cc\3\2\2\2\u01cc\u01cd\3")
         buf.write("\2\2\2\u01cd\u01ce\5j\66\2\u01ce=\3\2\2\2\u01cf\u01d0")
-        buf.write('\7G\2\2\u01d0\u01d1\5B"\2\u01d1?\3\2\2\2\u01d2\u01d5')
+        buf.write("\7G\2\2\u01d0\u01d1\5B\"\2\u01d1?\3\2\2\2\u01d2\u01d5")
         buf.write("\7+\2\2\u01d3\u01d4\7\n\2\2\u01d4\u01d6\7K\2\2\u01d5\u01d3")
         buf.write("\3\2\2\2\u01d5\u01d6\3\2\2\2\u01d6\u01d7\3\2\2\2\u01d7")
-        buf.write('\u01d8\5B"\2\u01d8A\3\2\2\2\u01d9\u01da\5D#\2\u01daC')
+        buf.write("\u01d8\5B\"\2\u01d8A\3\2\2\2\u01d9\u01da\5D#\2\u01daC")
         buf.write("\3\2\2\2\u01db\u01e0\5F$\2\u01dc\u01dd\7,\2\2\u01dd\u01df")
         buf.write("\5F$\2\u01de\u01dc\3\2\2\2\u01df\u01e2\3\2\2\2\u01e0\u01de")
         buf.write("\3\2\2\2\u01e0\u01e1\3\2\2\2\u01e1E\3\2\2\2\u01e2\u01e0")
@@ -254,10 +252,10 @@ def serializedATN():
         buf.write("\5H%\2\u01e6\u01e4\3\2\2\2\u01e7\u01ea\3\2\2\2\u01e8\u01e6")
         buf.write("\3\2\2\2\u01e8\u01e9\3\2\2\2\u01e9G\3\2\2\2\u01ea\u01e8")
         buf.write("\3\2\2\2\u01eb\u01ec\7.\2\2\u01ec\u01f3\5H%\2\u01ed\u01ee")
-        buf.write('\7\17\2\2\u01ee\u01ef\5B"\2\u01ef\u01f0\7\21\2\2\u01f0')
+        buf.write("\7\17\2\2\u01ee\u01ef\5B\"\2\u01ef\u01f0\7\21\2\2\u01f0")
         buf.write("\u01f3\3\2\2\2\u01f1\u01f3\5J&\2\u01f2\u01eb\3\2\2\2\u01f2")
         buf.write("\u01ed\3\2\2\2\u01f2\u01f1\3\2\2\2\u01f3I\3\2\2\2\u01f4")
-        buf.write("\u01f8\5N(\2\u01f5\u01f7\5L'\2\u01f6\u01f5\3\2\2\2\u01f7")
+        buf.write("\u01f8\5N(\2\u01f5\u01f7\5L\'\2\u01f6\u01f5\3\2\2\2\u01f7")
         buf.write("\u01fa\3\2\2\2\u01f8\u01f6\3\2\2\2\u01f8\u01f9\3\2\2\2")
         buf.write("\u01f9K\3\2\2\2\u01fa\u01f8\3\2\2\2\u01fb\u01fc\5n8\2")
         buf.write("\u01fc\u01fd\5N(\2\u01fdM\3\2\2\2\u01fe\u01ff\5P)\2\u01ff")
@@ -322,173 +320,51 @@ def serializedATN():
         return buf.getvalue()
 
 
-class ModelParser(Parser):
+class ModelParser ( Parser ):
 
     grammarFileName = "Model.g4"
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
-    decisionsToDFA = [DFA(ds, i) for i, ds in enumerate(atn.decisionToState)]
+    decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [
-        "<INVALID>",
-        "'product'",
-        "'{'",
-        "'}'",
-        "'structure'",
-        "'enumeration'",
-        "'static'",
-        "'reference'",
-        "'/'",
-        "'..'",
-        "'*'",
-        "'attribute'",
-        "'='",
-        "'('",
-        "','",
-        "')'",
-        "'num'",
-        "'-'",
-        "'string'",
-        "'/n'",
-        "'.'",
-        "'^'",
-        "'define'",
-        "'exists'",
-        "'in'",
-        "'explanation'",
-        "'combinations'",
-        "'allow'",
-        "'forbid'",
-        "'-*-'",
-        "'minimize'",
-        "'maximize'",
-        "'readwrite'",
-        "'readonly'",
-        "'hide'",
-        "'message'",
-        "'debug'",
-        "'info'",
-        "'warn'",
-        "'error'",
-        "'explain'",
-        "'prefer'",
-        "'||'",
-        "'&&'",
-        "'!'",
-        "'+'",
-        "'true'",
-        "'false'",
-        "'\u221E'",
-        "'['",
-        "']'",
-        "'last'",
-        "';'",
-        "'<'",
-        "'<='",
-        "'\u2264'",
-        "'>'",
-        "'>='",
-        "'\u2265'",
-        "'=='",
-        "'!='",
-        "'\u2260'",
-        "'\u2287'",
-        "'contains'",
-        "<INVALID>",
-        "<INVALID>",
-        "'behavior'",
-        "'condition'",
-        "'imply'",
-        "'require'",
-        "'default'",
-    ]
+    literalNames = [ "<INVALID>", "'product'", "'{'", "'}'", "'structure'", 
+                     "'enumeration'", "'static'", "'reference'", "'/'", 
+                     "'..'", "'*'", "'attribute'", "'='", "'('", "','", 
+                     "')'", "'num'", "'-'", "'string'", "'/n'", "'.'", "'^'", 
+                     "'define'", "'exists'", "'in'", "'explanation'", "'combinations'", 
+                     "'allow'", "'forbid'", "'-*-'", "'minimize'", "'maximize'", 
+                     "'readwrite'", "'readonly'", "'hide'", "'message'", 
+                     "'debug'", "'info'", "'warn'", "'error'", "'explain'", 
+                     "'prefer'", "'||'", "'&&'", "'!'", "'+'", "'true'", 
+                     "'false'", "'\u221E'", "'['", "']'", "'last'", "';'", 
+                     "'<'", "'<='", "'\u2264'", "'>'", "'>='", "'\u2265'", 
+                     "'=='", "'!='", "'\u2260'", "'\u2287'", "'contains'", 
+                     "<INVALID>", "<INVALID>", "'behavior'", "'condition'", 
+                     "'imply'", "'require'", "'default'" ]
 
-    symbolicNames = [
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "<INVALID>",
-        "FUNCTION",
-        "TRIGONOMETRIC",
-        "BEHAVIOR",
-        "CONDITION",
-        "IMPLY",
-        "REQUIRE",
-        "DEFAULT",
-        "KEYWORD",
-        "NAME",
-        "INTEGER",
-        "FLOATING",
-        "TIMES",
-        "HASHES",
-        "NEWLINE",
-        "WHITESPACE",
-        "COMMENT",
-        "MULTILINE_COMMENT",
-    ]
+    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "FUNCTION", "TRIGONOMETRIC", "BEHAVIOR", "CONDITION", 
+                      "IMPLY", "REQUIRE", "DEFAULT", "KEYWORD", "NAME", 
+                      "INTEGER", "FLOATING", "TIMES", "HASHES", "NEWLINE", 
+                      "WHITESPACE", "COMMENT", "MULTILINE_COMMENT" ]
 
     RULE_root = 0
     RULE_product = 1
@@ -546,151 +422,109 @@ class ModelParser(Parser):
     RULE_stmt_end = 53
     RULE_compare = 54
 
-    ruleNames = [
-        "root",
-        "product",
-        "structure",
-        "enumeration",
-        "feature",
-        "cardinality",
-        "attribute",
-        "option",
-        "field",
-        "number_def",
-        "string_def",
-        "unit",
-        "fraction",
-        "behavior",
-        "behavior_block",
-        "define",
-        "conditioned",
-        "exists",
-        "explanation",
-        "precondition",
-        "date",
-        "combinations",
-        "combination_row",
-        "combination_item",
-        "combination_atom",
-        "assign_default",
-        "assign_imply",
-        "optimize",
-        "interaction",
-        "message",
-        "require",
-        "prefer",
-        "condition",
-        "condition_or",
-        "condition_and",
-        "condition_not",
-        "condition_compare",
-        "condition_part",
-        "formula",
-        "formula_add",
-        "formula_sub",
-        "formula_mul",
-        "formula_div",
-        "formula_pow",
-        "formula_sign",
-        "formula_func",
-        "formula_atom",
-        "constant",
-        "floating",
-        "path",
-        "path_item",
-        "path_index",
-        "name",
-        "stmt_end",
-        "compare",
-    ]
+    ruleNames =  [ "root", "product", "structure", "enumeration", "feature", 
+                   "cardinality", "attribute", "option", "field", "number_def", 
+                   "string_def", "unit", "fraction", "behavior", "behavior_block", 
+                   "define", "conditioned", "exists", "explanation", "precondition", 
+                   "date", "combinations", "combination_row", "combination_item", 
+                   "combination_atom", "assign_default", "assign_imply", 
+                   "optimize", "interaction", "message", "require", "prefer", 
+                   "condition", "condition_or", "condition_and", "condition_not", 
+                   "condition_compare", "condition_part", "formula", "formula_add", 
+                   "formula_sub", "formula_mul", "formula_div", "formula_pow", 
+                   "formula_sign", "formula_func", "formula_atom", "constant", 
+                   "floating", "path", "path_item", "path_index", "name", 
+                   "stmt_end", "compare" ]
 
     EOF = Token.EOF
-    T__0 = 1
-    T__1 = 2
-    T__2 = 3
-    T__3 = 4
-    T__4 = 5
-    T__5 = 6
-    T__6 = 7
-    T__7 = 8
-    T__8 = 9
-    T__9 = 10
-    T__10 = 11
-    T__11 = 12
-    T__12 = 13
-    T__13 = 14
-    T__14 = 15
-    T__15 = 16
-    T__16 = 17
-    T__17 = 18
-    T__18 = 19
-    T__19 = 20
-    T__20 = 21
-    T__21 = 22
-    T__22 = 23
-    T__23 = 24
-    T__24 = 25
-    T__25 = 26
-    T__26 = 27
-    T__27 = 28
-    T__28 = 29
-    T__29 = 30
-    T__30 = 31
-    T__31 = 32
-    T__32 = 33
-    T__33 = 34
-    T__34 = 35
-    T__35 = 36
-    T__36 = 37
-    T__37 = 38
-    T__38 = 39
-    T__39 = 40
-    T__40 = 41
-    T__41 = 42
-    T__42 = 43
-    T__43 = 44
-    T__44 = 45
-    T__45 = 46
-    T__46 = 47
-    T__47 = 48
-    T__48 = 49
-    T__49 = 50
-    T__50 = 51
-    T__51 = 52
-    T__52 = 53
-    T__53 = 54
-    T__54 = 55
-    T__55 = 56
-    T__56 = 57
-    T__57 = 58
-    T__58 = 59
-    T__59 = 60
-    T__60 = 61
-    T__61 = 62
-    T__62 = 63
-    FUNCTION = 64
-    TRIGONOMETRIC = 65
-    BEHAVIOR = 66
-    CONDITION = 67
-    IMPLY = 68
-    REQUIRE = 69
-    DEFAULT = 70
-    KEYWORD = 71
-    NAME = 72
-    INTEGER = 73
-    FLOATING = 74
-    TIMES = 75
-    HASHES = 76
-    NEWLINE = 77
-    WHITESPACE = 78
-    COMMENT = 79
-    MULTILINE_COMMENT = 80
+    T__0=1
+    T__1=2
+    T__2=3
+    T__3=4
+    T__4=5
+    T__5=6
+    T__6=7
+    T__7=8
+    T__8=9
+    T__9=10
+    T__10=11
+    T__11=12
+    T__12=13
+    T__13=14
+    T__14=15
+    T__15=16
+    T__16=17
+    T__17=18
+    T__18=19
+    T__19=20
+    T__20=21
+    T__21=22
+    T__22=23
+    T__23=24
+    T__24=25
+    T__25=26
+    T__26=27
+    T__27=28
+    T__28=29
+    T__29=30
+    T__30=31
+    T__31=32
+    T__32=33
+    T__33=34
+    T__34=35
+    T__35=36
+    T__36=37
+    T__37=38
+    T__38=39
+    T__39=40
+    T__40=41
+    T__41=42
+    T__42=43
+    T__43=44
+    T__44=45
+    T__45=46
+    T__46=47
+    T__47=48
+    T__48=49
+    T__49=50
+    T__50=51
+    T__51=52
+    T__52=53
+    T__53=54
+    T__54=55
+    T__55=56
+    T__56=57
+    T__57=58
+    T__58=59
+    T__59=60
+    T__60=61
+    T__61=62
+    T__62=63
+    FUNCTION=64
+    TRIGONOMETRIC=65
+    BEHAVIOR=66
+    CONDITION=67
+    IMPLY=68
+    REQUIRE=69
+    DEFAULT=70
+    KEYWORD=71
+    NAME=72
+    INTEGER=73
+    FLOATING=74
+    TIMES=75
+    HASHES=76
+    NEWLINE=77
+    WHITESPACE=78
+    COMMENT=79
+    MULTILINE_COMMENT=80
 
-    def __init__(self, input: TokenStream, output: TextIO = sys.stdout):
+    def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.9")
+        self.checkVersion("4.9.3")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
+
+
 
     def wasNewline(self):
         for index in reversed(range(self.getCurrentToken().tokenIndex)):
@@ -707,85 +541,96 @@ class ModelParser(Parser):
 
         return False
 
-    class RootContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+
+    class RootContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def EOF(self):
             return self.getToken(ModelParser.EOF, 0)
 
-        def product(self, i: int = None):
+        def product(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.ProductContext)
             else:
-                return self.getTypedRuleContext(ModelParser.ProductContext, i)
+                return self.getTypedRuleContext(ModelParser.ProductContext,i)
 
-        def structure(self, i: int = None):
+
+        def structure(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.StructureContext)
             else:
-                return self.getTypedRuleContext(ModelParser.StructureContext, i)
+                return self.getTypedRuleContext(ModelParser.StructureContext,i)
 
-        def enumeration(self, i: int = None):
+
+        def enumeration(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.EnumerationContext)
             else:
-                return self.getTypedRuleContext(ModelParser.EnumerationContext, i)
+                return self.getTypedRuleContext(ModelParser.EnumerationContext,i)
 
-        def behavior(self, i: int = None):
+
+        def behavior(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.BehaviorContext)
             else:
-                return self.getTypedRuleContext(ModelParser.BehaviorContext, i)
+                return self.getTypedRuleContext(ModelParser.BehaviorContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_root
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterRoot"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRoot" ):
                 listener.enterRoot(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitRoot"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRoot" ):
                 listener.exitRoot(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitRoot"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRoot" ):
                 return visitor.visitRoot(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def root(self):
 
         localctx = ModelParser.RootContext(self, self._ctx, self.state)
         self.enterRule(localctx, 0, self.RULE_root)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 116
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (
-                ((_la) & ~0x3F) == 0
-                and ((1 << _la) & ((1 << ModelParser.T__0) | (1 << ModelParser.T__3) | (1 << ModelParser.T__4))) != 0
-            ) or _la == ModelParser.BEHAVIOR:
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ModelParser.T__0) | (1 << ModelParser.T__3) | (1 << ModelParser.T__4))) != 0) or _la==ModelParser.BEHAVIOR:
                 self.state = 114
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
                 if token in [ModelParser.T__0]:
                     self.state = 110
                     self.product()
+                    pass
                 elif token in [ModelParser.T__3]:
                     self.state = 111
                     self.structure()
+                    pass
                 elif token in [ModelParser.T__4]:
                     self.state = 112
                     self.enumeration()
+                    pass
                 elif token in [ModelParser.BEHAVIOR]:
                     self.state = 113
                     self.behavior()
+                    pass
                 else:
                     raise NoViableAltException(self)
 
@@ -803,46 +648,53 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class ProductContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class ProductContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def feature(self, i: int = None):
+        def feature(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.FeatureContext)
             else:
-                return self.getTypedRuleContext(ModelParser.FeatureContext, i)
+                return self.getTypedRuleContext(ModelParser.FeatureContext,i)
 
-        def stmt_end(self, i: int = None):
+
+        def stmt_end(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Stmt_endContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Stmt_endContext, i)
+                return self.getTypedRuleContext(ModelParser.Stmt_endContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_product
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterProduct"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterProduct" ):
                 listener.enterProduct(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitProduct"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitProduct" ):
                 listener.exitProduct(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitProduct"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitProduct" ):
                 return visitor.visitProduct(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def product(self):
 
         localctx = ModelParser.ProductContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_product)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 121
@@ -852,64 +704,13 @@ class ModelParser(Parser):
             self.state = 132
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (
-                ((_la) & ~0x3F) == 0
-                and (
-                    (1 << _la)
-                    & (
-                        (1 << ModelParser.T__5)
-                        | (1 << ModelParser.T__6)
-                        | (1 << ModelParser.T__15)
-                        | (1 << ModelParser.T__17)
-                    )
-                )
-                != 0
-            ) or (
-                (((_la - 64)) & ~0x3F) == 0
-                and (
-                    (1 << (_la - 64))
-                    & (
-                        (1 << (ModelParser.FUNCTION - 64))
-                        | (1 << (ModelParser.KEYWORD - 64))
-                        | (1 << (ModelParser.NAME - 64))
-                        | (1 << (ModelParser.INTEGER - 64))
-                        | (1 << (ModelParser.TIMES - 64))
-                    )
-                )
-                != 0
-            ):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ModelParser.T__5) | (1 << ModelParser.T__6) | (1 << ModelParser.T__15) | (1 << ModelParser.T__17))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (ModelParser.FUNCTION - 64)) | (1 << (ModelParser.KEYWORD - 64)) | (1 << (ModelParser.NAME - 64)) | (1 << (ModelParser.INTEGER - 64)) | (1 << (ModelParser.TIMES - 64)))) != 0):
                 self.state = 123
                 self.feature()
                 self.state = 129
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while (
-                    ((_la) & ~0x3F) == 0
-                    and (
-                        (1 << _la)
-                        & (
-                            (1 << ModelParser.T__5)
-                            | (1 << ModelParser.T__6)
-                            | (1 << ModelParser.T__15)
-                            | (1 << ModelParser.T__17)
-                            | (1 << ModelParser.T__51)
-                        )
-                    )
-                    != 0
-                ) or (
-                    (((_la - 64)) & ~0x3F) == 0
-                    and (
-                        (1 << (_la - 64))
-                        & (
-                            (1 << (ModelParser.FUNCTION - 64))
-                            | (1 << (ModelParser.KEYWORD - 64))
-                            | (1 << (ModelParser.NAME - 64))
-                            | (1 << (ModelParser.INTEGER - 64))
-                            | (1 << (ModelParser.TIMES - 64))
-                        )
-                    )
-                    != 0
-                ):
+                while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ModelParser.T__5) | (1 << ModelParser.T__6) | (1 << ModelParser.T__15) | (1 << ModelParser.T__17) | (1 << ModelParser.T__51))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (ModelParser.FUNCTION - 64)) | (1 << (ModelParser.KEYWORD - 64)) | (1 << (ModelParser.NAME - 64)) | (1 << (ModelParser.INTEGER - 64)) | (1 << (ModelParser.TIMES - 64)))) != 0):
                     self.state = 124
                     self.stmt_end()
                     self.state = 125
@@ -917,6 +718,8 @@ class ModelParser(Parser):
                     self.state = 131
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
+
+
 
             self.state = 134
             self.match(ModelParser.T__2)
@@ -928,49 +731,57 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class StructureContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class StructureContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(ModelParser.NameContext, 0)
+            return self.getTypedRuleContext(ModelParser.NameContext,0)
 
-        def feature(self, i: int = None):
+
+        def feature(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.FeatureContext)
             else:
-                return self.getTypedRuleContext(ModelParser.FeatureContext, i)
+                return self.getTypedRuleContext(ModelParser.FeatureContext,i)
 
-        def stmt_end(self, i: int = None):
+
+        def stmt_end(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Stmt_endContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Stmt_endContext, i)
+                return self.getTypedRuleContext(ModelParser.Stmt_endContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_structure
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterStructure"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterStructure" ):
                 listener.enterStructure(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitStructure"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitStructure" ):
                 listener.exitStructure(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitStructure"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStructure" ):
                 return visitor.visitStructure(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def structure(self):
 
         localctx = ModelParser.StructureContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_structure)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 136
@@ -982,64 +793,13 @@ class ModelParser(Parser):
             self.state = 148
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (
-                ((_la) & ~0x3F) == 0
-                and (
-                    (1 << _la)
-                    & (
-                        (1 << ModelParser.T__5)
-                        | (1 << ModelParser.T__6)
-                        | (1 << ModelParser.T__15)
-                        | (1 << ModelParser.T__17)
-                    )
-                )
-                != 0
-            ) or (
-                (((_la - 64)) & ~0x3F) == 0
-                and (
-                    (1 << (_la - 64))
-                    & (
-                        (1 << (ModelParser.FUNCTION - 64))
-                        | (1 << (ModelParser.KEYWORD - 64))
-                        | (1 << (ModelParser.NAME - 64))
-                        | (1 << (ModelParser.INTEGER - 64))
-                        | (1 << (ModelParser.TIMES - 64))
-                    )
-                )
-                != 0
-            ):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ModelParser.T__5) | (1 << ModelParser.T__6) | (1 << ModelParser.T__15) | (1 << ModelParser.T__17))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (ModelParser.FUNCTION - 64)) | (1 << (ModelParser.KEYWORD - 64)) | (1 << (ModelParser.NAME - 64)) | (1 << (ModelParser.INTEGER - 64)) | (1 << (ModelParser.TIMES - 64)))) != 0):
                 self.state = 139
                 self.feature()
                 self.state = 145
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while (
-                    ((_la) & ~0x3F) == 0
-                    and (
-                        (1 << _la)
-                        & (
-                            (1 << ModelParser.T__5)
-                            | (1 << ModelParser.T__6)
-                            | (1 << ModelParser.T__15)
-                            | (1 << ModelParser.T__17)
-                            | (1 << ModelParser.T__51)
-                        )
-                    )
-                    != 0
-                ) or (
-                    (((_la - 64)) & ~0x3F) == 0
-                    and (
-                        (1 << (_la - 64))
-                        & (
-                            (1 << (ModelParser.FUNCTION - 64))
-                            | (1 << (ModelParser.KEYWORD - 64))
-                            | (1 << (ModelParser.NAME - 64))
-                            | (1 << (ModelParser.INTEGER - 64))
-                            | (1 << (ModelParser.TIMES - 64))
-                        )
-                    )
-                    != 0
-                ):
+                while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ModelParser.T__5) | (1 << ModelParser.T__6) | (1 << ModelParser.T__15) | (1 << ModelParser.T__17) | (1 << ModelParser.T__51))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (ModelParser.FUNCTION - 64)) | (1 << (ModelParser.KEYWORD - 64)) | (1 << (ModelParser.NAME - 64)) | (1 << (ModelParser.INTEGER - 64)) | (1 << (ModelParser.TIMES - 64)))) != 0):
                     self.state = 140
                     self.stmt_end()
                     self.state = 141
@@ -1047,6 +807,8 @@ class ModelParser(Parser):
                     self.state = 147
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
+
+
 
             self.state = 150
             self.match(ModelParser.T__2)
@@ -1058,55 +820,64 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class EnumerationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class EnumerationContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(ModelParser.NameContext, 0)
+            return self.getTypedRuleContext(ModelParser.NameContext,0)
 
-        def attribute(self, i: int = None):
+
+        def attribute(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.AttributeContext)
             else:
-                return self.getTypedRuleContext(ModelParser.AttributeContext, i)
+                return self.getTypedRuleContext(ModelParser.AttributeContext,i)
 
-        def option(self, i: int = None):
+
+        def option(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.OptionContext)
             else:
-                return self.getTypedRuleContext(ModelParser.OptionContext, i)
+                return self.getTypedRuleContext(ModelParser.OptionContext,i)
 
-        def stmt_end(self, i: int = None):
+
+        def stmt_end(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Stmt_endContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Stmt_endContext, i)
+                return self.getTypedRuleContext(ModelParser.Stmt_endContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_enumeration
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterEnumeration"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterEnumeration" ):
                 listener.enterEnumeration(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitEnumeration"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitEnumeration" ):
                 listener.exitEnumeration(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitEnumeration"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEnumeration" ):
                 return visitor.visitEnumeration(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def enumeration(self):
 
         localctx = ModelParser.EnumerationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_enumeration)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 152
@@ -1118,40 +889,25 @@ class ModelParser(Parser):
             self.state = 169
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la - 11)) & ~0x3F) == 0 and (
-                (1 << (_la - 11))
-                & (
-                    (1 << (ModelParser.T__10 - 11))
-                    | (1 << (ModelParser.FUNCTION - 11))
-                    | (1 << (ModelParser.KEYWORD - 11))
-                    | (1 << (ModelParser.NAME - 11))
-                )
-            ) != 0:
+            if ((((_la - 11)) & ~0x3f) == 0 and ((1 << (_la - 11)) & ((1 << (ModelParser.T__10 - 11)) | (1 << (ModelParser.FUNCTION - 11)) | (1 << (ModelParser.KEYWORD - 11)) | (1 << (ModelParser.NAME - 11)))) != 0):
                 self.state = 157
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
                 if token in [ModelParser.T__10]:
                     self.state = 155
                     self.attribute()
+                    pass
                 elif token in [ModelParser.FUNCTION, ModelParser.KEYWORD, ModelParser.NAME]:
                     self.state = 156
                     self.option()
+                    pass
                 else:
                     raise NoViableAltException(self)
 
                 self.state = 166
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while (((_la - 11)) & ~0x3F) == 0 and (
-                    (1 << (_la - 11))
-                    & (
-                        (1 << (ModelParser.T__10 - 11))
-                        | (1 << (ModelParser.T__51 - 11))
-                        | (1 << (ModelParser.FUNCTION - 11))
-                        | (1 << (ModelParser.KEYWORD - 11))
-                        | (1 << (ModelParser.NAME - 11))
-                    )
-                ) != 0:
+                while ((((_la - 11)) & ~0x3f) == 0 and ((1 << (_la - 11)) & ((1 << (ModelParser.T__10 - 11)) | (1 << (ModelParser.T__51 - 11)) | (1 << (ModelParser.FUNCTION - 11)) | (1 << (ModelParser.KEYWORD - 11)) | (1 << (ModelParser.NAME - 11)))) != 0):
                     self.state = 159
                     self.stmt_end()
                     self.state = 162
@@ -1160,15 +916,19 @@ class ModelParser(Parser):
                     if token in [ModelParser.T__10]:
                         self.state = 160
                         self.attribute()
+                        pass
                     elif token in [ModelParser.FUNCTION, ModelParser.KEYWORD, ModelParser.NAME]:
                         self.state = 161
                         self.option()
+                        pass
                     else:
                         raise NoViableAltException(self)
 
                     self.state = 168
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
+
+
 
             self.state = 171
             self.match(ModelParser.T__2)
@@ -1180,20 +940,24 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class FeatureContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class FeatureContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.static = None  # Token
-            self.ref = None  # Token
-            self.priority = None  # Token
+            self.static = None # Token
+            self.ref = None # Token
+            self.priority = None # Token
 
         def field(self):
-            return self.getTypedRuleContext(ModelParser.FieldContext, 0)
+            return self.getTypedRuleContext(ModelParser.FieldContext,0)
+
 
         def cardinality(self):
-            return self.getTypedRuleContext(ModelParser.CardinalityContext, 0)
+            return self.getTypedRuleContext(ModelParser.CardinalityContext,0)
+
 
         def INTEGER(self):
             return self.getToken(ModelParser.INTEGER, 0)
@@ -1201,58 +965,65 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_feature
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterFeature"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFeature" ):
                 listener.enterFeature(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitFeature"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFeature" ):
                 listener.exitFeature(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitFeature"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFeature" ):
                 return visitor.visitFeature(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def feature(self):
 
         localctx = ModelParser.FeatureContext(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_feature)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 174
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__5:
+            if _la==ModelParser.T__5:
                 self.state = 173
                 localctx.static = self.match(ModelParser.T__5)
+
 
             self.state = 177
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__6:
+            if _la==ModelParser.T__6:
                 self.state = 176
                 localctx.ref = self.match(ModelParser.T__6)
+
 
             self.state = 180
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.INTEGER or _la == ModelParser.TIMES:
+            if _la==ModelParser.INTEGER or _la==ModelParser.TIMES:
                 self.state = 179
                 self.cardinality()
+
 
             self.state = 182
             self.field()
             self.state = 185
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__7:
+            if _la==ModelParser.T__7:
                 self.state = 183
                 self.match(ModelParser.T__7)
                 self.state = 184
                 localctx.priority = self.match(ModelParser.INTEGER)
+
 
         except RecognitionException as re:
             localctx.exception = re
@@ -1262,22 +1033,24 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class CardinalityContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class CardinalityContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.min = None  # Token
-            self.range = None  # Token
-            self.max = None  # Token
+            self.min = None # Token
+            self.range = None # Token
+            self.max = None # Token
 
-        def INTEGER(self, i: int = None):
+        def INTEGER(self, i:int=None):
             if i is None:
                 return self.getTokens(ModelParser.INTEGER)
             else:
                 return self.getToken(ModelParser.INTEGER, i)
 
-        def TIMES(self, i: int = None):
+        def TIMES(self, i:int=None):
             if i is None:
                 return self.getTokens(ModelParser.TIMES)
             else:
@@ -1286,31 +1059,34 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_cardinality
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterCardinality"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCardinality" ):
                 listener.enterCardinality(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitCardinality"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCardinality" ):
                 listener.exitCardinality(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitCardinality"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCardinality" ):
                 return visitor.visitCardinality(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def cardinality(self):
 
         localctx = ModelParser.CardinalityContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_cardinality)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 187
             localctx.min = self._input.LT(1)
             _la = self._input.LA(1)
-            if not (_la == ModelParser.INTEGER or _la == ModelParser.TIMES):
+            if not(_la==ModelParser.INTEGER or _la==ModelParser.TIMES):
                 localctx.min = self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1318,21 +1094,24 @@ class ModelParser(Parser):
             self.state = 192
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__8:
+            if _la==ModelParser.T__8:
                 self.state = 188
                 localctx.range = self.match(ModelParser.T__8)
                 self.state = 190
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la == ModelParser.T__9 or _la == ModelParser.INTEGER or _la == ModelParser.TIMES:
+                if _la==ModelParser.T__9 or _la==ModelParser.INTEGER or _la==ModelParser.TIMES:
                     self.state = 189
                     localctx.max = self._input.LT(1)
                     _la = self._input.LA(1)
-                    if not (_la == ModelParser.T__9 or _la == ModelParser.INTEGER or _la == ModelParser.TIMES):
+                    if not(_la==ModelParser.T__9 or _la==ModelParser.INTEGER or _la==ModelParser.TIMES):
                         localctx.max = self._errHandler.recoverInline(self)
                     else:
                         self._errHandler.reportMatch(self)
                         self.consume()
+
+
+
 
         except RecognitionException as re:
             localctx.exception = re
@@ -1342,31 +1121,37 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class AttributeContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class AttributeContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def field(self):
-            return self.getTypedRuleContext(ModelParser.FieldContext, 0)
+            return self.getTypedRuleContext(ModelParser.FieldContext,0)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_attribute
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterAttribute"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAttribute" ):
                 listener.enterAttribute(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitAttribute"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAttribute" ):
                 listener.exitAttribute(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitAttribute"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAttribute" ):
                 return visitor.visitAttribute(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def attribute(self):
 
@@ -1386,43 +1171,50 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class OptionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class OptionContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(ModelParser.NameContext, 0)
+            return self.getTypedRuleContext(ModelParser.NameContext,0)
 
-        def constant(self, i: int = None):
+
+        def constant(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.ConstantContext)
             else:
-                return self.getTypedRuleContext(ModelParser.ConstantContext, i)
+                return self.getTypedRuleContext(ModelParser.ConstantContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_option
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterOption"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterOption" ):
                 listener.enterOption(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitOption"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitOption" ):
                 listener.exitOption(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitOption"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOption" ):
                 return visitor.visitOption(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def option(self):
 
         localctx = ModelParser.OptionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_option)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 197
@@ -1430,7 +1222,7 @@ class ModelParser(Parser):
             self.state = 212
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__11:
+            if _la==ModelParser.T__11:
                 self.state = 198
                 self.match(ModelParser.T__11)
                 self.state = 199
@@ -1440,27 +1232,14 @@ class ModelParser(Parser):
                 self.state = 207
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while (((_la - 14)) & ~0x3F) == 0 and (
-                    (1 << (_la - 14))
-                    & (
-                        (1 << (ModelParser.T__13 - 14))
-                        | (1 << (ModelParser.T__16 - 14))
-                        | (1 << (ModelParser.T__45 - 14))
-                        | (1 << (ModelParser.T__46 - 14))
-                        | (1 << (ModelParser.T__47 - 14))
-                        | (1 << (ModelParser.FUNCTION - 14))
-                        | (1 << (ModelParser.KEYWORD - 14))
-                        | (1 << (ModelParser.NAME - 14))
-                        | (1 << (ModelParser.INTEGER - 14))
-                        | (1 << (ModelParser.FLOATING - 14))
-                    )
-                ) != 0:
+                while ((((_la - 14)) & ~0x3f) == 0 and ((1 << (_la - 14)) & ((1 << (ModelParser.T__13 - 14)) | (1 << (ModelParser.T__16 - 14)) | (1 << (ModelParser.T__45 - 14)) | (1 << (ModelParser.T__46 - 14)) | (1 << (ModelParser.T__47 - 14)) | (1 << (ModelParser.FUNCTION - 14)) | (1 << (ModelParser.KEYWORD - 14)) | (1 << (ModelParser.NAME - 14)) | (1 << (ModelParser.INTEGER - 14)) | (1 << (ModelParser.FLOATING - 14)))) != 0):
                     self.state = 202
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
-                    if _la == ModelParser.T__13:
+                    if _la==ModelParser.T__13:
                         self.state = 201
                         self.match(ModelParser.T__13)
+
 
                     self.state = 204
                     self.constant()
@@ -1471,6 +1250,7 @@ class ModelParser(Parser):
                 self.state = 210
                 self.match(ModelParser.T__14)
 
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1479,42 +1259,50 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class FieldContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class FieldContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.fieldName = None  # NameContext
-            self.type_ref = None  # NameContext
+            self.fieldName = None # NameContext
+            self.type_ref = None # NameContext
 
         def number_def(self):
-            return self.getTypedRuleContext(ModelParser.Number_defContext, 0)
+            return self.getTypedRuleContext(ModelParser.Number_defContext,0)
 
-        def name(self, i: int = None):
+
+        def name(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.NameContext)
             else:
-                return self.getTypedRuleContext(ModelParser.NameContext, i)
+                return self.getTypedRuleContext(ModelParser.NameContext,i)
+
 
         def string_def(self):
-            return self.getTypedRuleContext(ModelParser.String_defContext, 0)
+            return self.getTypedRuleContext(ModelParser.String_defContext,0)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_field
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterField"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterField" ):
                 listener.enterField(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitField"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitField" ):
                 listener.exitField(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitField"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitField" ):
                 return visitor.visitField(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def field(self):
 
@@ -1530,23 +1318,27 @@ class ModelParser(Parser):
                 self.number_def()
                 self.state = 215
                 localctx.fieldName = self.name()
+                pass
             elif token in [ModelParser.T__17]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 217
                 self.string_def()
                 self.state = 218
                 localctx.fieldName = self.name()
+                pass
             elif token in [ModelParser.FUNCTION, ModelParser.KEYWORD, ModelParser.NAME]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 221
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input, 19, self._ctx)
+                la_ = self._interp.adaptivePredict(self._input,19,self._ctx)
                 if la_ == 1:
                     self.state = 220
                     localctx.type_ref = self.name()
 
+
                 self.state = 223
                 localctx.fieldName = self.name()
+                pass
             else:
                 raise NoViableAltException(self)
 
@@ -1558,48 +1350,56 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Number_defContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Number_defContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.min = None  # FloatingContext
-            self.max = None  # FloatingContext
+            self.min = None # FloatingContext
+            self.max = None # FloatingContext
 
         def fraction(self):
-            return self.getTypedRuleContext(ModelParser.FractionContext, 0)
+            return self.getTypedRuleContext(ModelParser.FractionContext,0)
+
 
         def unit(self):
-            return self.getTypedRuleContext(ModelParser.UnitContext, 0)
+            return self.getTypedRuleContext(ModelParser.UnitContext,0)
 
-        def floating(self, i: int = None):
+
+        def floating(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.FloatingContext)
             else:
-                return self.getTypedRuleContext(ModelParser.FloatingContext, i)
+                return self.getTypedRuleContext(ModelParser.FloatingContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_number_def
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterNumber_def"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterNumber_def" ):
                 listener.enterNumber_def(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitNumber_def"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitNumber_def" ):
                 listener.exitNumber_def(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitNumber_def"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNumber_def" ):
                 return visitor.visitNumber_def(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def number_def(self):
 
         localctx = ModelParser.Number_defContext(self, self._ctx, self.state)
         self.enterRule(localctx, 18, self.RULE_number_def)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 226
@@ -1607,29 +1407,23 @@ class ModelParser(Parser):
             self.state = 228
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__19 or _la == ModelParser.T__20:
+            if _la==ModelParser.T__19 or _la==ModelParser.T__20:
                 self.state = 227
                 self.fraction()
+
 
             self.state = 231
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__7:
+            if _la==ModelParser.T__7:
                 self.state = 230
                 self.unit()
+
 
             self.state = 237
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la - 17)) & ~0x3F) == 0 and (
-                (1 << (_la - 17))
-                & (
-                    (1 << (ModelParser.T__16 - 17))
-                    | (1 << (ModelParser.T__47 - 17))
-                    | (1 << (ModelParser.INTEGER - 17))
-                    | (1 << (ModelParser.FLOATING - 17))
-                )
-            ) != 0:
+            if ((((_la - 17)) & ~0x3f) == 0 and ((1 << (_la - 17)) & ((1 << (ModelParser.T__16 - 17)) | (1 << (ModelParser.T__47 - 17)) | (1 << (ModelParser.INTEGER - 17)) | (1 << (ModelParser.FLOATING - 17)))) != 0):
                 self.state = 233
                 localctx.min = self.floating()
                 self.state = 234
@@ -1637,6 +1431,7 @@ class ModelParser(Parser):
                 self.state = 235
                 localctx.max = self.floating()
 
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1645,13 +1440,15 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class String_defContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class String_defContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.multiLine = None  # Token
-            self.maxLength = None  # Token
+            self.multiLine = None # Token
+            self.maxLength = None # Token
 
         def INTEGER(self):
             return self.getToken(ModelParser.INTEGER, 0)
@@ -1659,25 +1456,28 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_string_def
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterString_def"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterString_def" ):
                 listener.enterString_def(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitString_def"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitString_def" ):
                 listener.exitString_def(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitString_def"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitString_def" ):
                 return visitor.visitString_def(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def string_def(self):
 
         localctx = ModelParser.String_defContext(self, self._ctx, self.state)
         self.enterRule(localctx, 20, self.RULE_string_def)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 239
@@ -1685,16 +1485,18 @@ class ModelParser(Parser):
             self.state = 241
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__18:
+            if _la==ModelParser.T__18:
                 self.state = 240
                 localctx.multiLine = self.match(ModelParser.T__18)
+
 
             self.state = 244
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.INTEGER:
+            if _la==ModelParser.INTEGER:
                 self.state = 243
                 localctx.maxLength = self.match(ModelParser.INTEGER)
+
 
         except RecognitionException as re:
             localctx.exception = re
@@ -1704,12 +1506,14 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class UnitContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class UnitContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.text = None  # Token
+            self.text = None # Token
 
         def NAME(self):
             return self.getToken(ModelParser.NAME, 0)
@@ -1732,25 +1536,28 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_unit
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterUnit"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUnit" ):
                 listener.enterUnit(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitUnit"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUnit" ):
                 listener.exitUnit(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitUnit"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnit" ):
                 return visitor.visitUnit(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def unit(self):
 
         localctx = ModelParser.UnitContext(self, self._ctx, self.state)
         self.enterRule(localctx, 22, self.RULE_unit)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 246
@@ -1758,23 +1565,7 @@ class ModelParser(Parser):
             self.state = 247
             localctx.text = self._input.LT(1)
             _la = self._input.LA(1)
-            if not (
-                (
-                    (((_la - 64)) & ~0x3F) == 0
-                    and (
-                        (1 << (_la - 64))
-                        & (
-                            (1 << (ModelParser.FUNCTION - 64))
-                            | (1 << (ModelParser.NAME - 64))
-                            | (1 << (ModelParser.INTEGER - 64))
-                            | (1 << (ModelParser.FLOATING - 64))
-                            | (1 << (ModelParser.TIMES - 64))
-                            | (1 << (ModelParser.HASHES - 64))
-                        )
-                    )
-                    != 0
-                )
-            ):
+            if not(((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (ModelParser.FUNCTION - 64)) | (1 << (ModelParser.NAME - 64)) | (1 << (ModelParser.INTEGER - 64)) | (1 << (ModelParser.FLOATING - 64)) | (1 << (ModelParser.TIMES - 64)) | (1 << (ModelParser.HASHES - 64)))) != 0)):
                 localctx.text = self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1787,13 +1578,15 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class FractionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class FractionContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.sign = None  # Token
-            self.digits = None  # Token
+            self.sign = None # Token
+            self.digits = None # Token
 
         def HASHES(self):
             return self.getToken(ModelParser.HASHES, 0)
@@ -1801,31 +1594,34 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_fraction
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterFraction"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFraction" ):
                 listener.enterFraction(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitFraction"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFraction" ):
                 listener.exitFraction(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitFraction"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFraction" ):
                 return visitor.visitFraction(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def fraction(self):
 
         localctx = ModelParser.FractionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 24, self.RULE_fraction)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 249
             localctx.sign = self._input.LT(1)
             _la = self._input.LA(1)
-            if not (_la == ModelParser.T__19 or _la == ModelParser.T__20):
+            if not(_la==ModelParser.T__19 or _la==ModelParser.T__20):
                 localctx.sign = self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1840,9 +1636,11 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class BehaviorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class BehaviorContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1850,33 +1648,38 @@ class ModelParser(Parser):
             return self.getToken(ModelParser.BEHAVIOR, 0)
 
         def behavior_block(self):
-            return self.getTypedRuleContext(ModelParser.Behavior_blockContext, 0)
+            return self.getTypedRuleContext(ModelParser.Behavior_blockContext,0)
+
 
         def name(self):
-            return self.getTypedRuleContext(ModelParser.NameContext, 0)
+            return self.getTypedRuleContext(ModelParser.NameContext,0)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_behavior
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterBehavior"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBehavior" ):
                 listener.enterBehavior(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitBehavior"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBehavior" ):
                 listener.exitBehavior(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitBehavior"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBehavior" ):
                 return visitor.visitBehavior(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def behavior(self):
 
         localctx = ModelParser.BehaviorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 26, self.RULE_behavior)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 252
@@ -1884,16 +1687,10 @@ class ModelParser(Parser):
             self.state = 254
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la - 64)) & ~0x3F) == 0 and (
-                (1 << (_la - 64))
-                & (
-                    (1 << (ModelParser.FUNCTION - 64))
-                    | (1 << (ModelParser.KEYWORD - 64))
-                    | (1 << (ModelParser.NAME - 64))
-                )
-            ) != 0:
+            if ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (ModelParser.FUNCTION - 64)) | (1 << (ModelParser.KEYWORD - 64)) | (1 << (ModelParser.NAME - 64)))) != 0):
                 self.state = 253
                 self.name()
+
 
             self.state = 256
             self.behavior_block()
@@ -1905,52 +1702,60 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Behavior_blockContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Behavior_blockContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def define(self, i: int = None):
+        def define(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.DefineContext)
             else:
-                return self.getTypedRuleContext(ModelParser.DefineContext, i)
+                return self.getTypedRuleContext(ModelParser.DefineContext,i)
 
-        def stmt_end(self, i: int = None):
+
+        def stmt_end(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Stmt_endContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Stmt_endContext, i)
+                return self.getTypedRuleContext(ModelParser.Stmt_endContext,i)
 
-        def conditioned(self, i: int = None):
+
+        def conditioned(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.ConditionedContext)
             else:
-                return self.getTypedRuleContext(ModelParser.ConditionedContext, i)
+                return self.getTypedRuleContext(ModelParser.ConditionedContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_behavior_block
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterBehavior_block"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBehavior_block" ):
                 listener.enterBehavior_block(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitBehavior_block"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBehavior_block" ):
                 listener.exitBehavior_block(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitBehavior_block"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBehavior_block" ):
                 return visitor.visitBehavior_block(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def behavior_block(self):
 
         localctx = ModelParser.Behavior_blockContext(self, self._ctx, self.state)
         self.enterRule(localctx, 28, self.RULE_behavior_block)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 258
@@ -1958,7 +1763,7 @@ class ModelParser(Parser):
             self.state = 264
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la == ModelParser.T__21:
+            while _la==ModelParser.T__21:
                 self.state = 259
                 self.define()
                 self.state = 260
@@ -1970,76 +1775,13 @@ class ModelParser(Parser):
             self.state = 276
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (
-                ((_la) & ~0x3F) == 0
-                and (
-                    (1 << _la)
-                    & (
-                        (1 << ModelParser.T__1)
-                        | (1 << ModelParser.T__22)
-                        | (1 << ModelParser.T__24)
-                        | (1 << ModelParser.T__25)
-                        | (1 << ModelParser.T__29)
-                        | (1 << ModelParser.T__30)
-                        | (1 << ModelParser.T__31)
-                        | (1 << ModelParser.T__32)
-                        | (1 << ModelParser.T__33)
-                        | (1 << ModelParser.T__34)
-                        | (1 << ModelParser.T__40)
-                    )
-                )
-                != 0
-            ) or (
-                (((_la - 67)) & ~0x3F) == 0
-                and (
-                    (1 << (_la - 67))
-                    & (
-                        (1 << (ModelParser.CONDITION - 67))
-                        | (1 << (ModelParser.IMPLY - 67))
-                        | (1 << (ModelParser.REQUIRE - 67))
-                        | (1 << (ModelParser.DEFAULT - 67))
-                    )
-                )
-                != 0
-            ):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ModelParser.T__1) | (1 << ModelParser.T__22) | (1 << ModelParser.T__24) | (1 << ModelParser.T__25) | (1 << ModelParser.T__29) | (1 << ModelParser.T__30) | (1 << ModelParser.T__31) | (1 << ModelParser.T__32) | (1 << ModelParser.T__33) | (1 << ModelParser.T__34) | (1 << ModelParser.T__40))) != 0) or ((((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (ModelParser.CONDITION - 67)) | (1 << (ModelParser.IMPLY - 67)) | (1 << (ModelParser.REQUIRE - 67)) | (1 << (ModelParser.DEFAULT - 67)))) != 0):
                 self.state = 267
                 self.conditioned()
                 self.state = 273
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while (
-                    ((_la) & ~0x3F) == 0
-                    and (
-                        (1 << _la)
-                        & (
-                            (1 << ModelParser.T__1)
-                            | (1 << ModelParser.T__22)
-                            | (1 << ModelParser.T__24)
-                            | (1 << ModelParser.T__25)
-                            | (1 << ModelParser.T__29)
-                            | (1 << ModelParser.T__30)
-                            | (1 << ModelParser.T__31)
-                            | (1 << ModelParser.T__32)
-                            | (1 << ModelParser.T__33)
-                            | (1 << ModelParser.T__34)
-                            | (1 << ModelParser.T__40)
-                            | (1 << ModelParser.T__51)
-                        )
-                    )
-                    != 0
-                ) or (
-                    (((_la - 67)) & ~0x3F) == 0
-                    and (
-                        (1 << (_la - 67))
-                        & (
-                            (1 << (ModelParser.CONDITION - 67))
-                            | (1 << (ModelParser.IMPLY - 67))
-                            | (1 << (ModelParser.REQUIRE - 67))
-                            | (1 << (ModelParser.DEFAULT - 67))
-                        )
-                    )
-                    != 0
-                ):
+                while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ModelParser.T__1) | (1 << ModelParser.T__22) | (1 << ModelParser.T__24) | (1 << ModelParser.T__25) | (1 << ModelParser.T__29) | (1 << ModelParser.T__30) | (1 << ModelParser.T__31) | (1 << ModelParser.T__32) | (1 << ModelParser.T__33) | (1 << ModelParser.T__34) | (1 << ModelParser.T__40) | (1 << ModelParser.T__51))) != 0) or ((((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (ModelParser.CONDITION - 67)) | (1 << (ModelParser.IMPLY - 67)) | (1 << (ModelParser.REQUIRE - 67)) | (1 << (ModelParser.DEFAULT - 67)))) != 0):
                     self.state = 268
                     self.stmt_end()
                     self.state = 269
@@ -2047,6 +1789,8 @@ class ModelParser(Parser):
                     self.state = 275
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
+
+
 
             self.state = 278
             self.match(ModelParser.T__2)
@@ -2058,34 +1802,41 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class DefineContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class DefineContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(ModelParser.NameContext, 0)
+            return self.getTypedRuleContext(ModelParser.NameContext,0)
+
 
         def formula(self):
-            return self.getTypedRuleContext(ModelParser.FormulaContext, 0)
+            return self.getTypedRuleContext(ModelParser.FormulaContext,0)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_define
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterDefine"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterDefine" ):
                 listener.enterDefine(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitDefine"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitDefine" ):
                 listener.exitDefine(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitDefine"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDefine" ):
                 return visitor.visitDefine(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def define(self):
 
@@ -2109,94 +1860,113 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class ConditionedContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class ConditionedContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def behavior_block(self):
-            return self.getTypedRuleContext(ModelParser.Behavior_blockContext, 0)
+            return self.getTypedRuleContext(ModelParser.Behavior_blockContext,0)
+
 
         def assign_default(self):
-            return self.getTypedRuleContext(ModelParser.Assign_defaultContext, 0)
+            return self.getTypedRuleContext(ModelParser.Assign_defaultContext,0)
+
 
         def optimize(self):
-            return self.getTypedRuleContext(ModelParser.OptimizeContext, 0)
+            return self.getTypedRuleContext(ModelParser.OptimizeContext,0)
+
 
         def assign_imply(self):
-            return self.getTypedRuleContext(ModelParser.Assign_implyContext, 0)
+            return self.getTypedRuleContext(ModelParser.Assign_implyContext,0)
+
 
         def interaction(self):
-            return self.getTypedRuleContext(ModelParser.InteractionContext, 0)
+            return self.getTypedRuleContext(ModelParser.InteractionContext,0)
+
 
         def require(self):
-            return self.getTypedRuleContext(ModelParser.RequireContext, 0)
+            return self.getTypedRuleContext(ModelParser.RequireContext,0)
+
 
         def prefer(self):
-            return self.getTypedRuleContext(ModelParser.PreferContext, 0)
+            return self.getTypedRuleContext(ModelParser.PreferContext,0)
+
 
         def combinations(self):
-            return self.getTypedRuleContext(ModelParser.CombinationsContext, 0)
+            return self.getTypedRuleContext(ModelParser.CombinationsContext,0)
+
 
         def message(self):
-            return self.getTypedRuleContext(ModelParser.MessageContext, 0)
+            return self.getTypedRuleContext(ModelParser.MessageContext,0)
+
 
         def exists(self):
-            return self.getTypedRuleContext(ModelParser.ExistsContext, 0)
+            return self.getTypedRuleContext(ModelParser.ExistsContext,0)
+
 
         def explanation(self):
-            return self.getTypedRuleContext(ModelParser.ExplanationContext, 0)
+            return self.getTypedRuleContext(ModelParser.ExplanationContext,0)
 
-        def stmt_end(self, i: int = None):
+
+        def stmt_end(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Stmt_endContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Stmt_endContext, i)
+                return self.getTypedRuleContext(ModelParser.Stmt_endContext,i)
 
-        def precondition(self, i: int = None):
+
+        def precondition(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.PreconditionContext)
             else:
-                return self.getTypedRuleContext(ModelParser.PreconditionContext, i)
+                return self.getTypedRuleContext(ModelParser.PreconditionContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_conditioned
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterConditioned"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterConditioned" ):
                 listener.enterConditioned(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitConditioned"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitConditioned" ):
                 listener.exitConditioned(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitConditioned"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitConditioned" ):
                 return visitor.visitConditioned(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def conditioned(self):
 
         localctx = ModelParser.ConditionedContext(self, self._ctx, self.state)
         self.enterRule(localctx, 32, self.RULE_conditioned)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 288
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__24:
+            if _la==ModelParser.T__24:
                 self.state = 285
                 self.explanation()
                 self.state = 286
                 self.stmt_end()
 
+
             self.state = 295
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la == ModelParser.CONDITION:
+            while _la==ModelParser.CONDITION:
                 self.state = 290
                 self.precondition()
                 self.state = 291
@@ -2211,33 +1981,43 @@ class ModelParser(Parser):
             if token in [ModelParser.T__1]:
                 self.state = 298
                 self.behavior_block()
+                pass
             elif token in [ModelParser.DEFAULT]:
                 self.state = 299
                 self.assign_default()
+                pass
             elif token in [ModelParser.T__29, ModelParser.T__30]:
                 self.state = 300
                 self.optimize()
+                pass
             elif token in [ModelParser.IMPLY]:
                 self.state = 301
                 self.assign_imply()
+                pass
             elif token in [ModelParser.T__31, ModelParser.T__32, ModelParser.T__33]:
                 self.state = 302
                 self.interaction()
+                pass
             elif token in [ModelParser.REQUIRE]:
                 self.state = 303
                 self.require()
+                pass
             elif token in [ModelParser.T__40]:
                 self.state = 304
                 self.prefer()
+                pass
             elif token in [ModelParser.T__25]:
                 self.state = 305
                 self.combinations()
+                pass
             elif token in [ModelParser.T__34]:
                 self.state = 306
                 self.message()
+                pass
             elif token in [ModelParser.T__22]:
                 self.state = 307
                 self.exists()
+                pass
             else:
                 raise NoViableAltException(self)
 
@@ -2249,65 +2029,75 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class ExistsContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class ExistsContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.op = None  # Token
+            self.op = None # Token
 
-        def name(self, i: int = None):
+        def name(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.NameContext)
             else:
-                return self.getTypedRuleContext(ModelParser.NameContext, i)
+                return self.getTypedRuleContext(ModelParser.NameContext,i)
 
-        def path(self, i: int = None):
+
+        def path(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.PathContext)
             else:
-                return self.getTypedRuleContext(ModelParser.PathContext, i)
+                return self.getTypedRuleContext(ModelParser.PathContext,i)
 
-        def define(self, i: int = None):
+
+        def define(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.DefineContext)
             else:
-                return self.getTypedRuleContext(ModelParser.DefineContext, i)
+                return self.getTypedRuleContext(ModelParser.DefineContext,i)
 
-        def stmt_end(self, i: int = None):
+
+        def stmt_end(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Stmt_endContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Stmt_endContext, i)
+                return self.getTypedRuleContext(ModelParser.Stmt_endContext,i)
 
-        def conditioned(self, i: int = None):
+
+        def conditioned(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.ConditionedContext)
             else:
-                return self.getTypedRuleContext(ModelParser.ConditionedContext, i)
+                return self.getTypedRuleContext(ModelParser.ConditionedContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_exists
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterExists"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExists" ):
                 listener.enterExists(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitExists"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExists" ):
                 listener.exitExists(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitExists"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExists" ):
                 return visitor.visitExists(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def exists(self):
 
         localctx = ModelParser.ExistsContext(self, self._ctx, self.state)
         self.enterRule(localctx, 34, self.RULE_exists)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 310
@@ -2321,21 +2111,14 @@ class ModelParser(Parser):
             self.state = 323
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la - 14)) & ~0x3F) == 0 and (
-                (1 << (_la - 14))
-                & (
-                    (1 << (ModelParser.T__13 - 14))
-                    | (1 << (ModelParser.FUNCTION - 14))
-                    | (1 << (ModelParser.KEYWORD - 14))
-                    | (1 << (ModelParser.NAME - 14))
-                )
-            ) != 0:
+            while ((((_la - 14)) & ~0x3f) == 0 and ((1 << (_la - 14)) & ((1 << (ModelParser.T__13 - 14)) | (1 << (ModelParser.FUNCTION - 14)) | (1 << (ModelParser.KEYWORD - 14)) | (1 << (ModelParser.NAME - 14)))) != 0):
                 self.state = 315
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la == ModelParser.T__13:
+                if _la==ModelParser.T__13:
                     self.state = 314
                     self.match(ModelParser.T__13)
+
 
                 self.state = 317
                 self.name()
@@ -2352,7 +2135,7 @@ class ModelParser(Parser):
             self.state = 332
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la == ModelParser.T__21:
+            while _la==ModelParser.T__21:
                 self.state = 327
                 self.define()
                 self.state = 328
@@ -2364,76 +2147,13 @@ class ModelParser(Parser):
             self.state = 344
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (
-                ((_la) & ~0x3F) == 0
-                and (
-                    (1 << _la)
-                    & (
-                        (1 << ModelParser.T__1)
-                        | (1 << ModelParser.T__22)
-                        | (1 << ModelParser.T__24)
-                        | (1 << ModelParser.T__25)
-                        | (1 << ModelParser.T__29)
-                        | (1 << ModelParser.T__30)
-                        | (1 << ModelParser.T__31)
-                        | (1 << ModelParser.T__32)
-                        | (1 << ModelParser.T__33)
-                        | (1 << ModelParser.T__34)
-                        | (1 << ModelParser.T__40)
-                    )
-                )
-                != 0
-            ) or (
-                (((_la - 67)) & ~0x3F) == 0
-                and (
-                    (1 << (_la - 67))
-                    & (
-                        (1 << (ModelParser.CONDITION - 67))
-                        | (1 << (ModelParser.IMPLY - 67))
-                        | (1 << (ModelParser.REQUIRE - 67))
-                        | (1 << (ModelParser.DEFAULT - 67))
-                    )
-                )
-                != 0
-            ):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ModelParser.T__1) | (1 << ModelParser.T__22) | (1 << ModelParser.T__24) | (1 << ModelParser.T__25) | (1 << ModelParser.T__29) | (1 << ModelParser.T__30) | (1 << ModelParser.T__31) | (1 << ModelParser.T__32) | (1 << ModelParser.T__33) | (1 << ModelParser.T__34) | (1 << ModelParser.T__40))) != 0) or ((((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (ModelParser.CONDITION - 67)) | (1 << (ModelParser.IMPLY - 67)) | (1 << (ModelParser.REQUIRE - 67)) | (1 << (ModelParser.DEFAULT - 67)))) != 0):
                 self.state = 335
                 self.conditioned()
                 self.state = 341
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while (
-                    ((_la) & ~0x3F) == 0
-                    and (
-                        (1 << _la)
-                        & (
-                            (1 << ModelParser.T__1)
-                            | (1 << ModelParser.T__22)
-                            | (1 << ModelParser.T__24)
-                            | (1 << ModelParser.T__25)
-                            | (1 << ModelParser.T__29)
-                            | (1 << ModelParser.T__30)
-                            | (1 << ModelParser.T__31)
-                            | (1 << ModelParser.T__32)
-                            | (1 << ModelParser.T__33)
-                            | (1 << ModelParser.T__34)
-                            | (1 << ModelParser.T__40)
-                            | (1 << ModelParser.T__51)
-                        )
-                    )
-                    != 0
-                ) or (
-                    (((_la - 67)) & ~0x3F) == 0
-                    and (
-                        (1 << (_la - 67))
-                        & (
-                            (1 << (ModelParser.CONDITION - 67))
-                            | (1 << (ModelParser.IMPLY - 67))
-                            | (1 << (ModelParser.REQUIRE - 67))
-                            | (1 << (ModelParser.DEFAULT - 67))
-                        )
-                    )
-                    != 0
-                ):
+                while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ModelParser.T__1) | (1 << ModelParser.T__22) | (1 << ModelParser.T__24) | (1 << ModelParser.T__25) | (1 << ModelParser.T__29) | (1 << ModelParser.T__30) | (1 << ModelParser.T__31) | (1 << ModelParser.T__32) | (1 << ModelParser.T__33) | (1 << ModelParser.T__34) | (1 << ModelParser.T__40) | (1 << ModelParser.T__51))) != 0) or ((((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (ModelParser.CONDITION - 67)) | (1 << (ModelParser.IMPLY - 67)) | (1 << (ModelParser.REQUIRE - 67)) | (1 << (ModelParser.DEFAULT - 67)))) != 0):
                     self.state = 336
                     self.stmt_end()
                     self.state = 337
@@ -2441,6 +2161,8 @@ class ModelParser(Parser):
                     self.state = 343
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
+
+
 
             self.state = 346
             self.match(ModelParser.T__2)
@@ -2452,31 +2174,37 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class ExplanationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class ExplanationContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(ModelParser.NameContext, 0)
+            return self.getTypedRuleContext(ModelParser.NameContext,0)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_explanation
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterExplanation"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExplanation" ):
                 listener.enterExplanation(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitExplanation"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExplanation" ):
                 listener.exitExplanation(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitExplanation"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExplanation" ):
                 return visitor.visitExplanation(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def explanation(self):
 
@@ -2496,9 +2224,11 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class PreconditionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class PreconditionContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2506,24 +2236,28 @@ class ModelParser(Parser):
             return self.getToken(ModelParser.CONDITION, 0)
 
         def condition(self):
-            return self.getTypedRuleContext(ModelParser.ConditionContext, 0)
+            return self.getTypedRuleContext(ModelParser.ConditionContext,0)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_precondition
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterPrecondition"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterPrecondition" ):
                 listener.enterPrecondition(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitPrecondition"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitPrecondition" ):
                 listener.exitPrecondition(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitPrecondition"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPrecondition" ):
                 return visitor.visitPrecondition(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def precondition(self):
 
@@ -2543,16 +2277,18 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class DateContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class DateContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.year = None  # Token
-            self.month = None  # Token
-            self.day = None  # Token
+            self.year = None # Token
+            self.month = None # Token
+            self.day = None # Token
 
-        def INTEGER(self, i: int = None):
+        def INTEGER(self, i:int=None):
             if i is None:
                 return self.getTokens(ModelParser.INTEGER)
             else:
@@ -2561,19 +2297,22 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_date
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterDate"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterDate" ):
                 listener.enterDate(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitDate"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitDate" ):
                 listener.exitDate(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitDate"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDate" ):
                 return visitor.visitDate(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def date(self):
 
@@ -2599,53 +2338,61 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class CombinationsContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class CombinationsContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.op = None  # Token
+            self.op = None # Token
 
-        def formula(self, i: int = None):
+        def formula(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.FormulaContext)
             else:
-                return self.getTypedRuleContext(ModelParser.FormulaContext, i)
+                return self.getTypedRuleContext(ModelParser.FormulaContext,i)
 
-        def stmt_end(self, i: int = None):
+
+        def stmt_end(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Stmt_endContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Stmt_endContext, i)
+                return self.getTypedRuleContext(ModelParser.Stmt_endContext,i)
 
-        def combination_row(self, i: int = None):
+
+        def combination_row(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Combination_rowContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Combination_rowContext, i)
+                return self.getTypedRuleContext(ModelParser.Combination_rowContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_combinations
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterCombinations"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCombinations" ):
                 listener.enterCombinations(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitCombinations"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCombinations" ):
                 listener.exitCombinations(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitCombinations"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCombinations" ):
                 return visitor.visitCombinations(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def combinations(self):
 
         localctx = ModelParser.CombinationsContext(self, self._ctx, self.state)
         self.enterRule(localctx, 42, self.RULE_combinations)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 360
@@ -2657,29 +2404,14 @@ class ModelParser(Parser):
             self.state = 369
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la - 13)) & ~0x3F) == 0 and (
-                (1 << (_la - 13))
-                & (
-                    (1 << (ModelParser.T__12 - 13))
-                    | (1 << (ModelParser.T__13 - 13))
-                    | (1 << (ModelParser.T__16 - 13))
-                    | (1 << (ModelParser.T__44 - 13))
-                    | (1 << (ModelParser.T__45 - 13))
-                    | (1 << (ModelParser.T__46 - 13))
-                    | (1 << (ModelParser.T__47 - 13))
-                    | (1 << (ModelParser.FUNCTION - 13))
-                    | (1 << (ModelParser.KEYWORD - 13))
-                    | (1 << (ModelParser.NAME - 13))
-                    | (1 << (ModelParser.INTEGER - 13))
-                    | (1 << (ModelParser.FLOATING - 13))
-                )
-            ) != 0:
+            while ((((_la - 13)) & ~0x3f) == 0 and ((1 << (_la - 13)) & ((1 << (ModelParser.T__12 - 13)) | (1 << (ModelParser.T__13 - 13)) | (1 << (ModelParser.T__16 - 13)) | (1 << (ModelParser.T__44 - 13)) | (1 << (ModelParser.T__45 - 13)) | (1 << (ModelParser.T__46 - 13)) | (1 << (ModelParser.T__47 - 13)) | (1 << (ModelParser.FUNCTION - 13)) | (1 << (ModelParser.KEYWORD - 13)) | (1 << (ModelParser.NAME - 13)) | (1 << (ModelParser.INTEGER - 13)) | (1 << (ModelParser.FLOATING - 13)))) != 0):
                 self.state = 364
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la == ModelParser.T__13:
+                if _la==ModelParser.T__13:
                     self.state = 363
                     self.match(ModelParser.T__13)
+
 
                 self.state = 366
                 self.formula()
@@ -2694,21 +2426,23 @@ class ModelParser(Parser):
             self.state = 383
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__26 or _la == ModelParser.T__27:
+            if _la==ModelParser.T__26 or _la==ModelParser.T__27:
                 self.state = 374
                 self.combination_row()
                 self.state = 380
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input, 40, self._ctx)
-                while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
-                    if _alt == 1:
+                _alt = self._interp.adaptivePredict(self._input,40,self._ctx)
+                while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                    if _alt==1:
                         self.state = 375
                         self.stmt_end()
                         self.state = 376
-                        self.combination_row()
+                        self.combination_row() 
                     self.state = 382
                     self._errHandler.sync(self)
-                    _alt = self._interp.adaptivePredict(self._input, 40, self._ctx)
+                    _alt = self._interp.adaptivePredict(self._input,40,self._ctx)
+
+
 
         except RecognitionException as re:
             localctx.exception = re
@@ -2718,47 +2452,53 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Combination_rowContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Combination_rowContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.rowType = None  # Token
+            self.rowType = None # Token
 
-        def combination_item(self, i: int = None):
+        def combination_item(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Combination_itemContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Combination_itemContext, i)
+                return self.getTypedRuleContext(ModelParser.Combination_itemContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_combination_row
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterCombination_row"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCombination_row" ):
                 listener.enterCombination_row(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitCombination_row"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCombination_row" ):
                 listener.exitCombination_row(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitCombination_row"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCombination_row" ):
                 return visitor.visitCombination_row(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def combination_row(self):
 
         localctx = ModelParser.Combination_rowContext(self, self._ctx, self.state)
         self.enterRule(localctx, 44, self.RULE_combination_row)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 385
             localctx.rowType = self._input.LT(1)
             _la = self._input.LA(1)
-            if not (_la == ModelParser.T__26 or _la == ModelParser.T__27):
+            if not(_la==ModelParser.T__26 or _la==ModelParser.T__27):
                 localctx.rowType = self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -2770,42 +2510,14 @@ class ModelParser(Parser):
             self.state = 394
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la - 12)) & ~0x3F) == 0 and (
-                (1 << (_la - 12))
-                & (
-                    (1 << (ModelParser.T__11 - 12))
-                    | (1 << (ModelParser.T__12 - 12))
-                    | (1 << (ModelParser.T__13 - 12))
-                    | (1 << (ModelParser.T__16 - 12))
-                    | (1 << (ModelParser.T__28 - 12))
-                    | (1 << (ModelParser.T__44 - 12))
-                    | (1 << (ModelParser.T__45 - 12))
-                    | (1 << (ModelParser.T__46 - 12))
-                    | (1 << (ModelParser.T__47 - 12))
-                    | (1 << (ModelParser.T__52 - 12))
-                    | (1 << (ModelParser.T__53 - 12))
-                    | (1 << (ModelParser.T__54 - 12))
-                    | (1 << (ModelParser.T__55 - 12))
-                    | (1 << (ModelParser.T__56 - 12))
-                    | (1 << (ModelParser.T__57 - 12))
-                    | (1 << (ModelParser.T__58 - 12))
-                    | (1 << (ModelParser.T__59 - 12))
-                    | (1 << (ModelParser.T__60 - 12))
-                    | (1 << (ModelParser.T__61 - 12))
-                    | (1 << (ModelParser.T__62 - 12))
-                    | (1 << (ModelParser.FUNCTION - 12))
-                    | (1 << (ModelParser.KEYWORD - 12))
-                    | (1 << (ModelParser.NAME - 12))
-                    | (1 << (ModelParser.INTEGER - 12))
-                    | (1 << (ModelParser.FLOATING - 12))
-                )
-            ) != 0:
+            while ((((_la - 12)) & ~0x3f) == 0 and ((1 << (_la - 12)) & ((1 << (ModelParser.T__11 - 12)) | (1 << (ModelParser.T__12 - 12)) | (1 << (ModelParser.T__13 - 12)) | (1 << (ModelParser.T__16 - 12)) | (1 << (ModelParser.T__28 - 12)) | (1 << (ModelParser.T__44 - 12)) | (1 << (ModelParser.T__45 - 12)) | (1 << (ModelParser.T__46 - 12)) | (1 << (ModelParser.T__47 - 12)) | (1 << (ModelParser.T__52 - 12)) | (1 << (ModelParser.T__53 - 12)) | (1 << (ModelParser.T__54 - 12)) | (1 << (ModelParser.T__55 - 12)) | (1 << (ModelParser.T__56 - 12)) | (1 << (ModelParser.T__57 - 12)) | (1 << (ModelParser.T__58 - 12)) | (1 << (ModelParser.T__59 - 12)) | (1 << (ModelParser.T__60 - 12)) | (1 << (ModelParser.T__61 - 12)) | (1 << (ModelParser.T__62 - 12)) | (1 << (ModelParser.FUNCTION - 12)) | (1 << (ModelParser.KEYWORD - 12)) | (1 << (ModelParser.NAME - 12)) | (1 << (ModelParser.INTEGER - 12)) | (1 << (ModelParser.FLOATING - 12)))) != 0):
                 self.state = 389
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la == ModelParser.T__13:
+                if _la==ModelParser.T__13:
                     self.state = 388
                     self.match(ModelParser.T__13)
+
 
                 self.state = 391
                 self.combination_item()
@@ -2823,49 +2535,56 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Combination_itemContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Combination_itemContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.any = None  # Token
+            self.any = None # Token
 
-        def combination_atom(self, i: int = None):
+        def combination_atom(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Combination_atomContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Combination_atomContext, i)
+                return self.getTypedRuleContext(ModelParser.Combination_atomContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_combination_item
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterCombination_item"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCombination_item" ):
                 listener.enterCombination_item(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitCombination_item"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCombination_item" ):
                 listener.exitCombination_item(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitCombination_item"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCombination_item" ):
                 return visitor.visitCombination_item(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def combination_item(self):
 
         localctx = ModelParser.Combination_itemContext(self, self._ctx, self.state)
         self.enterRule(localctx, 46, self.RULE_combination_item)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.state = 414
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input, 46, self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,46,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 399
                 localctx.any = self.match(ModelParser.T__28)
+                pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
@@ -2876,41 +2595,14 @@ class ModelParser(Parser):
                 self.state = 408
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while (((_la - 12)) & ~0x3F) == 0 and (
-                    (1 << (_la - 12))
-                    & (
-                        (1 << (ModelParser.T__11 - 12))
-                        | (1 << (ModelParser.T__12 - 12))
-                        | (1 << (ModelParser.T__13 - 12))
-                        | (1 << (ModelParser.T__16 - 12))
-                        | (1 << (ModelParser.T__44 - 12))
-                        | (1 << (ModelParser.T__45 - 12))
-                        | (1 << (ModelParser.T__46 - 12))
-                        | (1 << (ModelParser.T__47 - 12))
-                        | (1 << (ModelParser.T__52 - 12))
-                        | (1 << (ModelParser.T__53 - 12))
-                        | (1 << (ModelParser.T__54 - 12))
-                        | (1 << (ModelParser.T__55 - 12))
-                        | (1 << (ModelParser.T__56 - 12))
-                        | (1 << (ModelParser.T__57 - 12))
-                        | (1 << (ModelParser.T__58 - 12))
-                        | (1 << (ModelParser.T__59 - 12))
-                        | (1 << (ModelParser.T__60 - 12))
-                        | (1 << (ModelParser.T__61 - 12))
-                        | (1 << (ModelParser.T__62 - 12))
-                        | (1 << (ModelParser.FUNCTION - 12))
-                        | (1 << (ModelParser.KEYWORD - 12))
-                        | (1 << (ModelParser.NAME - 12))
-                        | (1 << (ModelParser.INTEGER - 12))
-                        | (1 << (ModelParser.FLOATING - 12))
-                    )
-                ) != 0:
+                while ((((_la - 12)) & ~0x3f) == 0 and ((1 << (_la - 12)) & ((1 << (ModelParser.T__11 - 12)) | (1 << (ModelParser.T__12 - 12)) | (1 << (ModelParser.T__13 - 12)) | (1 << (ModelParser.T__16 - 12)) | (1 << (ModelParser.T__44 - 12)) | (1 << (ModelParser.T__45 - 12)) | (1 << (ModelParser.T__46 - 12)) | (1 << (ModelParser.T__47 - 12)) | (1 << (ModelParser.T__52 - 12)) | (1 << (ModelParser.T__53 - 12)) | (1 << (ModelParser.T__54 - 12)) | (1 << (ModelParser.T__55 - 12)) | (1 << (ModelParser.T__56 - 12)) | (1 << (ModelParser.T__57 - 12)) | (1 << (ModelParser.T__58 - 12)) | (1 << (ModelParser.T__59 - 12)) | (1 << (ModelParser.T__60 - 12)) | (1 << (ModelParser.T__61 - 12)) | (1 << (ModelParser.T__62 - 12)) | (1 << (ModelParser.FUNCTION - 12)) | (1 << (ModelParser.KEYWORD - 12)) | (1 << (ModelParser.NAME - 12)) | (1 << (ModelParser.INTEGER - 12)) | (1 << (ModelParser.FLOATING - 12)))) != 0):
                     self.state = 403
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
-                    if _la == ModelParser.T__13:
+                    if _la==ModelParser.T__13:
                         self.state = 402
                         self.match(ModelParser.T__13)
+
 
                     self.state = 405
                     self.combination_atom()
@@ -2920,11 +2612,14 @@ class ModelParser(Parser):
 
                 self.state = 411
                 self.match(ModelParser.T__14)
+                pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 413
                 self.combination_atom()
+                pass
+
 
         except RecognitionException as re:
             localctx.exception = re
@@ -2934,65 +2629,57 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Combination_atomContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Combination_atomContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.operator = None  # CompareContext
+            self.operator = None # CompareContext
 
         def formula(self):
-            return self.getTypedRuleContext(ModelParser.FormulaContext, 0)
+            return self.getTypedRuleContext(ModelParser.FormulaContext,0)
+
 
         def compare(self):
-            return self.getTypedRuleContext(ModelParser.CompareContext, 0)
+            return self.getTypedRuleContext(ModelParser.CompareContext,0)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_combination_atom
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterCombination_atom"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCombination_atom" ):
                 listener.enterCombination_atom(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitCombination_atom"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCombination_atom" ):
                 listener.exitCombination_atom(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitCombination_atom"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCombination_atom" ):
                 return visitor.visitCombination_atom(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def combination_atom(self):
 
         localctx = ModelParser.Combination_atomContext(self, self._ctx, self.state)
         self.enterRule(localctx, 48, self.RULE_combination_atom)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 417
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if ((_la) & ~0x3F) == 0 and (
-                (1 << _la)
-                & (
-                    (1 << ModelParser.T__11)
-                    | (1 << ModelParser.T__52)
-                    | (1 << ModelParser.T__53)
-                    | (1 << ModelParser.T__54)
-                    | (1 << ModelParser.T__55)
-                    | (1 << ModelParser.T__56)
-                    | (1 << ModelParser.T__57)
-                    | (1 << ModelParser.T__58)
-                    | (1 << ModelParser.T__59)
-                    | (1 << ModelParser.T__60)
-                    | (1 << ModelParser.T__61)
-                    | (1 << ModelParser.T__62)
-                )
-            ) != 0:
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ModelParser.T__11) | (1 << ModelParser.T__52) | (1 << ModelParser.T__53) | (1 << ModelParser.T__54) | (1 << ModelParser.T__55) | (1 << ModelParser.T__56) | (1 << ModelParser.T__57) | (1 << ModelParser.T__58) | (1 << ModelParser.T__59) | (1 << ModelParser.T__60) | (1 << ModelParser.T__61) | (1 << ModelParser.T__62))) != 0):
                 self.state = 416
                 localctx.operator = self.compare()
+
 
             self.state = 419
             self.formula()
@@ -3004,19 +2691,23 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Assign_defaultContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Assign_defaultContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.op = None  # Token
-            self.priority = None  # Token
+            self.op = None # Token
+            self.priority = None # Token
 
         def path(self):
-            return self.getTypedRuleContext(ModelParser.PathContext, 0)
+            return self.getTypedRuleContext(ModelParser.PathContext,0)
+
 
         def formula(self):
-            return self.getTypedRuleContext(ModelParser.FormulaContext, 0)
+            return self.getTypedRuleContext(ModelParser.FormulaContext,0)
+
 
         def DEFAULT(self):
             return self.getToken(ModelParser.DEFAULT, 0)
@@ -3027,25 +2718,28 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_assign_default
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterAssign_default"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAssign_default" ):
                 listener.enterAssign_default(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitAssign_default"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAssign_default" ):
                 listener.exitAssign_default(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitAssign_default"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAssign_default" ):
                 return visitor.visitAssign_default(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def assign_default(self):
 
         localctx = ModelParser.Assign_defaultContext(self, self._ctx, self.state)
         self.enterRule(localctx, 50, self.RULE_assign_default)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 421
@@ -3053,11 +2747,12 @@ class ModelParser(Parser):
             self.state = 424
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__7:
+            if _la==ModelParser.T__7:
                 self.state = 422
                 self.match(ModelParser.T__7)
                 self.state = 423
                 localctx.priority = self.match(ModelParser.INTEGER)
+
 
             self.state = 426
             self.path()
@@ -3073,18 +2768,22 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Assign_implyContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Assign_implyContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.op = None  # Token
+            self.op = None # Token
 
         def path(self):
-            return self.getTypedRuleContext(ModelParser.PathContext, 0)
+            return self.getTypedRuleContext(ModelParser.PathContext,0)
+
 
         def formula(self):
-            return self.getTypedRuleContext(ModelParser.FormulaContext, 0)
+            return self.getTypedRuleContext(ModelParser.FormulaContext,0)
+
 
         def IMPLY(self):
             return self.getToken(ModelParser.IMPLY, 0)
@@ -3092,19 +2791,22 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_assign_imply
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterAssign_imply"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAssign_imply" ):
                 listener.enterAssign_imply(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitAssign_imply"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAssign_imply" ):
                 listener.exitAssign_imply(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitAssign_imply"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAssign_imply" ):
                 return visitor.visitAssign_imply(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def assign_imply(self):
 
@@ -3128,16 +2830,19 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class OptimizeContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class OptimizeContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.op = None  # Token
-            self.priority = None  # Token
+            self.op = None # Token
+            self.priority = None # Token
 
         def path(self):
-            return self.getTypedRuleContext(ModelParser.PathContext, 0)
+            return self.getTypedRuleContext(ModelParser.PathContext,0)
+
 
         def INTEGER(self):
             return self.getToken(ModelParser.INTEGER, 0)
@@ -3145,31 +2850,34 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_optimize
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterOptimize"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterOptimize" ):
                 listener.enterOptimize(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitOptimize"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitOptimize" ):
                 listener.exitOptimize(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitOptimize"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOptimize" ):
                 return visitor.visitOptimize(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def optimize(self):
 
         localctx = ModelParser.OptimizeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 54, self.RULE_optimize)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 435
             localctx.op = self._input.LT(1)
             _la = self._input.LA(1)
-            if not (_la == ModelParser.T__29 or _la == ModelParser.T__30):
+            if not(_la==ModelParser.T__29 or _la==ModelParser.T__30):
                 localctx.op = self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -3177,11 +2885,12 @@ class ModelParser(Parser):
             self.state = 438
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__7:
+            if _la==ModelParser.T__7:
                 self.state = 436
                 self.match(ModelParser.T__7)
                 self.state = 437
                 localctx.priority = self.match(ModelParser.INTEGER)
+
 
             self.state = 440
             self.path()
@@ -3193,22 +2902,26 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class InteractionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class InteractionContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.directive = None  # Token
-            self.priority = None  # Token
+            self.directive = None # Token
+            self.priority = None # Token
 
         def path(self):
-            return self.getTypedRuleContext(ModelParser.PathContext, 0)
+            return self.getTypedRuleContext(ModelParser.PathContext,0)
 
-        def name(self, i: int = None):
+
+        def name(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.NameContext)
             else:
-                return self.getTypedRuleContext(ModelParser.NameContext, i)
+                return self.getTypedRuleContext(ModelParser.NameContext,i)
+
 
         def INTEGER(self):
             return self.getToken(ModelParser.INTEGER, 0)
@@ -3216,37 +2929,34 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_interaction
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterInteraction"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterInteraction" ):
                 listener.enterInteraction(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitInteraction"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitInteraction" ):
                 listener.exitInteraction(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitInteraction"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInteraction" ):
                 return visitor.visitInteraction(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def interaction(self):
 
         localctx = ModelParser.InteractionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 56, self.RULE_interaction)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 442
             localctx.directive = self._input.LT(1)
             _la = self._input.LA(1)
-            if not (
-                (
-                    ((_la) & ~0x3F) == 0
-                    and ((1 << _la) & ((1 << ModelParser.T__31) | (1 << ModelParser.T__32) | (1 << ModelParser.T__33)))
-                    != 0
-                )
-            ):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ModelParser.T__31) | (1 << ModelParser.T__32) | (1 << ModelParser.T__33))) != 0)):
                 localctx.directive = self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -3254,25 +2964,19 @@ class ModelParser(Parser):
             self.state = 445
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__7:
+            if _la==ModelParser.T__7:
                 self.state = 443
                 self.match(ModelParser.T__7)
                 self.state = 444
                 localctx.priority = self.match(ModelParser.INTEGER)
+
 
             self.state = 447
             self.path()
             self.state = 451
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la - 64)) & ~0x3F) == 0 and (
-                (1 << (_la - 64))
-                & (
-                    (1 << (ModelParser.FUNCTION - 64))
-                    | (1 << (ModelParser.KEYWORD - 64))
-                    | (1 << (ModelParser.NAME - 64))
-                )
-            ) != 0:
+            while ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (ModelParser.FUNCTION - 64)) | (1 << (ModelParser.KEYWORD - 64)) | (1 << (ModelParser.NAME - 64)))) != 0):
                 self.state = 448
                 self.name()
                 self.state = 453
@@ -3287,39 +2991,45 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class MessageContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class MessageContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.op = None  # Token
-            self.level = None  # Token
+            self.op = None # Token
+            self.level = None # Token
 
         def name(self):
-            return self.getTypedRuleContext(ModelParser.NameContext, 0)
+            return self.getTypedRuleContext(ModelParser.NameContext,0)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_message
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterMessage"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterMessage" ):
                 listener.enterMessage(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitMessage"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitMessage" ):
                 listener.exitMessage(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitMessage"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMessage" ):
                 return visitor.visitMessage(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def message(self):
 
         localctx = ModelParser.MessageContext(self, self._ctx, self.state)
         self.enterRule(localctx, 58, self.RULE_message)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 454
@@ -3327,32 +3037,18 @@ class ModelParser(Parser):
             self.state = 457
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__7:
+            if _la==ModelParser.T__7:
                 self.state = 455
                 self.match(ModelParser.T__7)
                 self.state = 456
                 localctx.level = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not (
-                    (
-                        ((_la) & ~0x3F) == 0
-                        and (
-                            (1 << _la)
-                            & (
-                                (1 << ModelParser.T__35)
-                                | (1 << ModelParser.T__36)
-                                | (1 << ModelParser.T__37)
-                                | (1 << ModelParser.T__38)
-                                | (1 << ModelParser.T__39)
-                            )
-                        )
-                        != 0
-                    )
-                ):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ModelParser.T__35) | (1 << ModelParser.T__36) | (1 << ModelParser.T__37) | (1 << ModelParser.T__38) | (1 << ModelParser.T__39))) != 0)):
                     localctx.level = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
+
 
             self.state = 459
             self.name()
@@ -3364,15 +3060,18 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class RequireContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class RequireContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.op = None  # Token
+            self.op = None # Token
 
         def condition(self):
-            return self.getTypedRuleContext(ModelParser.ConditionContext, 0)
+            return self.getTypedRuleContext(ModelParser.ConditionContext,0)
+
 
         def REQUIRE(self):
             return self.getToken(ModelParser.REQUIRE, 0)
@@ -3380,19 +3079,22 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_require
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterRequire"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRequire" ):
                 listener.enterRequire(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitRequire"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRequire" ):
                 listener.exitRequire(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitRequire"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRequire" ):
                 return visitor.visitRequire(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def require(self):
 
@@ -3412,16 +3114,19 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class PreferContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class PreferContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.op = None  # Token
-            self.penalty = None  # Token
+            self.op = None # Token
+            self.penalty = None # Token
 
         def condition(self):
-            return self.getTypedRuleContext(ModelParser.ConditionContext, 0)
+            return self.getTypedRuleContext(ModelParser.ConditionContext,0)
+
 
         def INTEGER(self):
             return self.getToken(ModelParser.INTEGER, 0)
@@ -3429,25 +3134,28 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_prefer
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterPrefer"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterPrefer" ):
                 listener.enterPrefer(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitPrefer"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitPrefer" ):
                 listener.exitPrefer(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitPrefer"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPrefer" ):
                 return visitor.visitPrefer(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def prefer(self):
 
         localctx = ModelParser.PreferContext(self, self._ctx, self.state)
         self.enterRule(localctx, 62, self.RULE_prefer)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 464
@@ -3455,11 +3163,12 @@ class ModelParser(Parser):
             self.state = 467
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__7:
+            if _la==ModelParser.T__7:
                 self.state = 465
                 self.match(ModelParser.T__7)
                 self.state = 466
                 localctx.penalty = self.match(ModelParser.INTEGER)
+
 
             self.state = 469
             self.condition()
@@ -3471,31 +3180,37 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class ConditionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class ConditionContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def condition_or(self):
-            return self.getTypedRuleContext(ModelParser.Condition_orContext, 0)
+            return self.getTypedRuleContext(ModelParser.Condition_orContext,0)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_condition
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterCondition"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCondition" ):
                 listener.enterCondition(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitCondition"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCondition" ):
                 listener.exitCondition(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitCondition"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCondition" ):
                 return visitor.visitCondition(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def condition(self):
 
@@ -3513,40 +3228,46 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Condition_orContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Condition_orContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def condition_and(self, i: int = None):
+        def condition_and(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Condition_andContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Condition_andContext, i)
+                return self.getTypedRuleContext(ModelParser.Condition_andContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_condition_or
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterCondition_or"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCondition_or" ):
                 listener.enterCondition_or(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitCondition_or"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCondition_or" ):
                 listener.exitCondition_or(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitCondition_or"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCondition_or" ):
                 return visitor.visitCondition_or(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def condition_or(self):
 
         localctx = ModelParser.Condition_orContext(self, self._ctx, self.state)
         self.enterRule(localctx, 66, self.RULE_condition_or)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 473
@@ -3554,7 +3275,7 @@ class ModelParser(Parser):
             self.state = 478
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la == ModelParser.T__41:
+            while _la==ModelParser.T__41:
                 self.state = 474
                 self.match(ModelParser.T__41)
                 self.state = 475
@@ -3571,40 +3292,46 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Condition_andContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Condition_andContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def condition_not(self, i: int = None):
+        def condition_not(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Condition_notContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Condition_notContext, i)
+                return self.getTypedRuleContext(ModelParser.Condition_notContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_condition_and
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterCondition_and"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCondition_and" ):
                 listener.enterCondition_and(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitCondition_and"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCondition_and" ):
                 listener.exitCondition_and(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitCondition_and"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCondition_and" ):
                 return visitor.visitCondition_and(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def condition_and(self):
 
         localctx = ModelParser.Condition_andContext(self, self._ctx, self.state)
         self.enterRule(localctx, 68, self.RULE_condition_and)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 481
@@ -3612,7 +3339,7 @@ class ModelParser(Parser):
             self.state = 486
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la == ModelParser.T__42:
+            while _la==ModelParser.T__42:
                 self.state = 482
                 self.match(ModelParser.T__42)
                 self.state = 483
@@ -3629,37 +3356,45 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Condition_notContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Condition_notContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def condition_not(self):
-            return self.getTypedRuleContext(ModelParser.Condition_notContext, 0)
+            return self.getTypedRuleContext(ModelParser.Condition_notContext,0)
+
 
         def condition(self):
-            return self.getTypedRuleContext(ModelParser.ConditionContext, 0)
+            return self.getTypedRuleContext(ModelParser.ConditionContext,0)
+
 
         def condition_compare(self):
-            return self.getTypedRuleContext(ModelParser.Condition_compareContext, 0)
+            return self.getTypedRuleContext(ModelParser.Condition_compareContext,0)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_condition_not
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterCondition_not"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCondition_not" ):
                 listener.enterCondition_not(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitCondition_not"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCondition_not" ):
                 listener.exitCondition_not(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitCondition_not"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCondition_not" ):
                 return visitor.visitCondition_not(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def condition_not(self):
 
@@ -3668,13 +3403,14 @@ class ModelParser(Parser):
         try:
             self.state = 496
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input, 56, self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,56,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 489
                 self.match(ModelParser.T__43)
                 self.state = 490
                 self.condition_not()
+                pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
@@ -3684,11 +3420,14 @@ class ModelParser(Parser):
                 self.condition()
                 self.state = 493
                 self.match(ModelParser.T__14)
+                pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 495
                 self.condition_compare()
+                pass
+
 
         except RecognitionException as re:
             localctx.exception = re
@@ -3698,43 +3437,50 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Condition_compareContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Condition_compareContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def formula(self):
-            return self.getTypedRuleContext(ModelParser.FormulaContext, 0)
+            return self.getTypedRuleContext(ModelParser.FormulaContext,0)
 
-        def condition_part(self, i: int = None):
+
+        def condition_part(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Condition_partContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Condition_partContext, i)
+                return self.getTypedRuleContext(ModelParser.Condition_partContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_condition_compare
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterCondition_compare"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCondition_compare" ):
                 listener.enterCondition_compare(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitCondition_compare"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCondition_compare" ):
                 listener.exitCondition_compare(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitCondition_compare"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCondition_compare" ):
                 return visitor.visitCondition_compare(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def condition_compare(self):
 
         localctx = ModelParser.Condition_compareContext(self, self._ctx, self.state)
         self.enterRule(localctx, 72, self.RULE_condition_compare)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 498
@@ -3742,23 +3488,7 @@ class ModelParser(Parser):
             self.state = 502
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while ((_la) & ~0x3F) == 0 and (
-                (1 << _la)
-                & (
-                    (1 << ModelParser.T__11)
-                    | (1 << ModelParser.T__52)
-                    | (1 << ModelParser.T__53)
-                    | (1 << ModelParser.T__54)
-                    | (1 << ModelParser.T__55)
-                    | (1 << ModelParser.T__56)
-                    | (1 << ModelParser.T__57)
-                    | (1 << ModelParser.T__58)
-                    | (1 << ModelParser.T__59)
-                    | (1 << ModelParser.T__60)
-                    | (1 << ModelParser.T__61)
-                    | (1 << ModelParser.T__62)
-                )
-            ) != 0:
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ModelParser.T__11) | (1 << ModelParser.T__52) | (1 << ModelParser.T__53) | (1 << ModelParser.T__54) | (1 << ModelParser.T__55) | (1 << ModelParser.T__56) | (1 << ModelParser.T__57) | (1 << ModelParser.T__58) | (1 << ModelParser.T__59) | (1 << ModelParser.T__60) | (1 << ModelParser.T__61) | (1 << ModelParser.T__62))) != 0):
                 self.state = 499
                 self.condition_part()
                 self.state = 504
@@ -3773,35 +3503,42 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Condition_partContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Condition_partContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.operator = None  # CompareContext
+            self.operator = None # CompareContext
 
         def formula(self):
-            return self.getTypedRuleContext(ModelParser.FormulaContext, 0)
+            return self.getTypedRuleContext(ModelParser.FormulaContext,0)
+
 
         def compare(self):
-            return self.getTypedRuleContext(ModelParser.CompareContext, 0)
+            return self.getTypedRuleContext(ModelParser.CompareContext,0)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_condition_part
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterCondition_part"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCondition_part" ):
                 listener.enterCondition_part(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitCondition_part"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCondition_part" ):
                 listener.exitCondition_part(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitCondition_part"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCondition_part" ):
                 return visitor.visitCondition_part(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def condition_part(self):
 
@@ -3821,31 +3558,37 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class FormulaContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class FormulaContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def formula_add(self):
-            return self.getTypedRuleContext(ModelParser.Formula_addContext, 0)
+            return self.getTypedRuleContext(ModelParser.Formula_addContext,0)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_formula
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterFormula"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFormula" ):
                 listener.enterFormula(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitFormula"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFormula" ):
                 listener.exitFormula(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitFormula"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFormula" ):
                 return visitor.visitFormula(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def formula(self):
 
@@ -3863,35 +3606,41 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Formula_addContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Formula_addContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.operator = None  # Token
+            self.operator = None # Token
 
-        def formula_sub(self, i: int = None):
+        def formula_sub(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Formula_subContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Formula_subContext, i)
+                return self.getTypedRuleContext(ModelParser.Formula_subContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_formula_add
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterFormula_add"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFormula_add" ):
                 listener.enterFormula_add(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitFormula_add"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFormula_add" ):
                 listener.exitFormula_add(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitFormula_add"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFormula_add" ):
                 return visitor.visitFormula_add(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def formula_add(self):
 
@@ -3903,16 +3652,16 @@ class ModelParser(Parser):
             self.formula_sub()
             self.state = 515
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input, 58, self._ctx)
-            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
-                if _alt == 1:
+            _alt = self._interp.adaptivePredict(self._input,58,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
                     self.state = 511
                     localctx.operator = self.match(ModelParser.T__44)
                     self.state = 512
-                    self.formula_sub()
+                    self.formula_sub() 
                 self.state = 517
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input, 58, self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,58,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -3922,35 +3671,41 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Formula_subContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Formula_subContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.operator = None  # Token
+            self.operator = None # Token
 
-        def formula_mul(self, i: int = None):
+        def formula_mul(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Formula_mulContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Formula_mulContext, i)
+                return self.getTypedRuleContext(ModelParser.Formula_mulContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_formula_sub
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterFormula_sub"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFormula_sub" ):
                 listener.enterFormula_sub(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitFormula_sub"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFormula_sub" ):
                 listener.exitFormula_sub(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitFormula_sub"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFormula_sub" ):
                 return visitor.visitFormula_sub(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def formula_sub(self):
 
@@ -3962,16 +3717,16 @@ class ModelParser(Parser):
             self.formula_mul()
             self.state = 523
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input, 59, self._ctx)
-            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
-                if _alt == 1:
+            _alt = self._interp.adaptivePredict(self._input,59,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
                     self.state = 519
                     localctx.operator = self.match(ModelParser.T__16)
                     self.state = 520
-                    self.formula_mul()
+                    self.formula_mul() 
                 self.state = 525
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input, 59, self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,59,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -3981,41 +3736,47 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Formula_mulContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Formula_mulContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.operator = None  # Token
+            self.operator = None # Token
 
-        def formula_div(self, i: int = None):
+        def formula_div(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Formula_divContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Formula_divContext, i)
+                return self.getTypedRuleContext(ModelParser.Formula_divContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_formula_mul
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterFormula_mul"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFormula_mul" ):
                 listener.enterFormula_mul(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitFormula_mul"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFormula_mul" ):
                 listener.exitFormula_mul(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitFormula_mul"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFormula_mul" ):
                 return visitor.visitFormula_mul(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def formula_mul(self):
 
         localctx = ModelParser.Formula_mulContext(self, self._ctx, self.state)
         self.enterRule(localctx, 82, self.RULE_formula_mul)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 526
@@ -4023,7 +3784,7 @@ class ModelParser(Parser):
             self.state = 531
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la == ModelParser.T__9:
+            while _la==ModelParser.T__9:
                 self.state = 527
                 localctx.operator = self.match(ModelParser.T__9)
                 self.state = 528
@@ -4040,41 +3801,47 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Formula_divContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Formula_divContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.operator = None  # Token
+            self.operator = None # Token
 
-        def formula_pow(self, i: int = None):
+        def formula_pow(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Formula_powContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Formula_powContext, i)
+                return self.getTypedRuleContext(ModelParser.Formula_powContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_formula_div
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterFormula_div"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFormula_div" ):
                 listener.enterFormula_div(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitFormula_div"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFormula_div" ):
                 listener.exitFormula_div(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitFormula_div"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFormula_div" ):
                 return visitor.visitFormula_div(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def formula_div(self):
 
         localctx = ModelParser.Formula_divContext(self, self._ctx, self.state)
         self.enterRule(localctx, 84, self.RULE_formula_div)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 534
@@ -4082,7 +3849,7 @@ class ModelParser(Parser):
             self.state = 539
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la == ModelParser.T__7:
+            while _la==ModelParser.T__7:
                 self.state = 535
                 localctx.operator = self.match(ModelParser.T__7)
                 self.state = 536
@@ -4099,41 +3866,47 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Formula_powContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Formula_powContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.operator = None  # Token
+            self.operator = None # Token
 
-        def formula_sign(self, i: int = None):
+        def formula_sign(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Formula_signContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Formula_signContext, i)
+                return self.getTypedRuleContext(ModelParser.Formula_signContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_formula_pow
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterFormula_pow"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFormula_pow" ):
                 listener.enterFormula_pow(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitFormula_pow"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFormula_pow" ):
                 listener.exitFormula_pow(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitFormula_pow"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFormula_pow" ):
                 return visitor.visitFormula_pow(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def formula_pow(self):
 
         localctx = ModelParser.Formula_powContext(self, self._ctx, self.state)
         self.enterRule(localctx, 86, self.RULE_formula_pow)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 542
@@ -4141,7 +3914,7 @@ class ModelParser(Parser):
             self.state = 547
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la == ModelParser.T__20:
+            while _la==ModelParser.T__20:
                 self.state = 543
                 localctx.operator = self.match(ModelParser.T__20)
                 self.state = 544
@@ -4158,41 +3931,50 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Formula_signContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Formula_signContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.neg = None  # Formula_signContext
+            self.neg = None # Formula_signContext
 
         def formula_sign(self):
-            return self.getTypedRuleContext(ModelParser.Formula_signContext, 0)
+            return self.getTypedRuleContext(ModelParser.Formula_signContext,0)
+
 
         def formula(self):
-            return self.getTypedRuleContext(ModelParser.FormulaContext, 0)
+            return self.getTypedRuleContext(ModelParser.FormulaContext,0)
+
 
         def formula_func(self):
-            return self.getTypedRuleContext(ModelParser.Formula_funcContext, 0)
+            return self.getTypedRuleContext(ModelParser.Formula_funcContext,0)
+
 
         def formula_atom(self):
-            return self.getTypedRuleContext(ModelParser.Formula_atomContext, 0)
+            return self.getTypedRuleContext(ModelParser.Formula_atomContext,0)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_formula_sign
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterFormula_sign"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFormula_sign" ):
                 listener.enterFormula_sign(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitFormula_sign"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFormula_sign" ):
                 listener.exitFormula_sign(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitFormula_sign"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFormula_sign" ):
                 return visitor.visitFormula_sign(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def formula_sign(self):
 
@@ -4201,13 +3983,14 @@ class ModelParser(Parser):
         try:
             self.state = 560
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input, 63, self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,63,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 550
                 self.match(ModelParser.T__16)
                 self.state = 551
                 localctx.neg = self.formula_sign()
+                pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
@@ -4215,6 +3998,7 @@ class ModelParser(Parser):
                 self.match(ModelParser.T__44)
                 self.state = 553
                 self.formula_sign()
+                pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
@@ -4224,16 +4008,20 @@ class ModelParser(Parser):
                 self.formula()
                 self.state = 556
                 self.match(ModelParser.T__14)
+                pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 558
                 self.formula_func()
+                pass
 
             elif la_ == 5:
                 self.enterOuterAlt(localctx, 5)
                 self.state = 559
                 self.formula_atom()
+                pass
+
 
         except RecognitionException as re:
             localctx.exception = re
@@ -4243,18 +4031,21 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Formula_funcContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Formula_funcContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.fun = None  # Token
+            self.fun = None # Token
 
-        def formula(self, i: int = None):
+        def formula(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.FormulaContext)
             else:
-                return self.getTypedRuleContext(ModelParser.FormulaContext, i)
+                return self.getTypedRuleContext(ModelParser.FormulaContext,i)
+
 
         def FUNCTION(self):
             return self.getToken(ModelParser.FUNCTION, 0)
@@ -4262,25 +4053,28 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_formula_func
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterFormula_func"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFormula_func" ):
                 listener.enterFormula_func(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitFormula_func"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFormula_func" ):
                 listener.exitFormula_func(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitFormula_func"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFormula_func" ):
                 return visitor.visitFormula_func(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def formula_func(self):
 
         localctx = ModelParser.Formula_funcContext(self, self._ctx, self.state)
         self.enterRule(localctx, 90, self.RULE_formula_func)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 562
@@ -4292,7 +4086,7 @@ class ModelParser(Parser):
             self.state = 569
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la == ModelParser.T__13:
+            while _la==ModelParser.T__13:
                 self.state = 565
                 self.match(ModelParser.T__13)
                 self.state = 566
@@ -4311,38 +4105,45 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Formula_atomContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Formula_atomContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.atom_true = None  # Token
-            self.atom_false = None  # Token
-            self.atom_num = None  # FloatingContext
-            self.atom_path = None  # PathContext
+            self.atom_true = None # Token
+            self.atom_false = None # Token
+            self.atom_num = None # FloatingContext
+            self.atom_path = None # PathContext
 
         def floating(self):
-            return self.getTypedRuleContext(ModelParser.FloatingContext, 0)
+            return self.getTypedRuleContext(ModelParser.FloatingContext,0)
+
 
         def path(self):
-            return self.getTypedRuleContext(ModelParser.PathContext, 0)
+            return self.getTypedRuleContext(ModelParser.PathContext,0)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_formula_atom
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterFormula_atom"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFormula_atom" ):
                 listener.enterFormula_atom(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitFormula_atom"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFormula_atom" ):
                 listener.exitFormula_atom(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitFormula_atom"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFormula_atom" ):
                 return visitor.visitFormula_atom(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def formula_atom(self):
 
@@ -4356,18 +4157,22 @@ class ModelParser(Parser):
                 self.enterOuterAlt(localctx, 1)
                 self.state = 574
                 localctx.atom_true = self.match(ModelParser.T__45)
+                pass
             elif token in [ModelParser.T__46]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 575
                 localctx.atom_false = self.match(ModelParser.T__46)
+                pass
             elif token in [ModelParser.T__16, ModelParser.T__47, ModelParser.INTEGER, ModelParser.FLOATING]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 576
                 localctx.atom_num = self.floating()
+                pass
             elif token in [ModelParser.FUNCTION, ModelParser.KEYWORD, ModelParser.NAME]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 577
                 localctx.atom_path = self.path()
+                pass
             else:
                 raise NoViableAltException(self)
 
@@ -4379,34 +4184,41 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class ConstantContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class ConstantContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def floating(self):
-            return self.getTypedRuleContext(ModelParser.FloatingContext, 0)
+            return self.getTypedRuleContext(ModelParser.FloatingContext,0)
+
 
         def name(self):
-            return self.getTypedRuleContext(ModelParser.NameContext, 0)
+            return self.getTypedRuleContext(ModelParser.NameContext,0)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_constant
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterConstant"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterConstant" ):
                 listener.enterConstant(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitConstant"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitConstant" ):
                 listener.exitConstant(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitConstant"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitConstant" ):
                 return visitor.visitConstant(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def constant(self):
 
@@ -4420,18 +4232,22 @@ class ModelParser(Parser):
                 self.enterOuterAlt(localctx, 1)
                 self.state = 580
                 self.floating()
+                pass
             elif token in [ModelParser.FUNCTION, ModelParser.KEYWORD, ModelParser.NAME]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 581
                 self.name()
+                pass
             elif token in [ModelParser.T__45]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 582
                 self.match(ModelParser.T__45)
+                pass
             elif token in [ModelParser.T__46]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 583
                 self.match(ModelParser.T__46)
+                pass
             else:
                 raise NoViableAltException(self)
 
@@ -4443,9 +4259,11 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class FloatingContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class FloatingContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4458,50 +4276,41 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_floating
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterFloating"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFloating" ):
                 listener.enterFloating(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitFloating"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFloating" ):
                 listener.exitFloating(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitFloating"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFloating" ):
                 return visitor.visitFloating(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def floating(self):
 
         localctx = ModelParser.FloatingContext(self, self._ctx, self.state)
         self.enterRule(localctx, 96, self.RULE_floating)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 587
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__16:
+            if _la==ModelParser.T__16:
                 self.state = 586
                 self.match(ModelParser.T__16)
 
+
             self.state = 589
             _la = self._input.LA(1)
-            if not (
-                (
-                    (((_la - 48)) & ~0x3F) == 0
-                    and (
-                        (1 << (_la - 48))
-                        & (
-                            (1 << (ModelParser.T__47 - 48))
-                            | (1 << (ModelParser.INTEGER - 48))
-                            | (1 << (ModelParser.FLOATING - 48))
-                        )
-                    )
-                    != 0
-                )
-            ):
+            if not(((((_la - 48)) & ~0x3f) == 0 and ((1 << (_la - 48)) & ((1 << (ModelParser.T__47 - 48)) | (1 << (ModelParser.INTEGER - 48)) | (1 << (ModelParser.FLOATING - 48)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -4514,40 +4323,46 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class PathContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class PathContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def path_item(self, i: int = None):
+        def path_item(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Path_itemContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Path_itemContext, i)
+                return self.getTypedRuleContext(ModelParser.Path_itemContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_path
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterPath"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterPath" ):
                 listener.enterPath(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitPath"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitPath" ):
                 listener.exitPath(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitPath"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPath" ):
                 return visitor.visitPath(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def path(self):
 
         localctx = ModelParser.PathContext(self, self._ctx, self.state)
         self.enterRule(localctx, 98, self.RULE_path)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 591
@@ -4555,7 +4370,7 @@ class ModelParser(Parser):
             self.state = 596
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la == ModelParser.T__19:
+            while _la==ModelParser.T__19:
                 self.state = 592
                 self.match(ModelParser.T__19)
                 self.state = 593
@@ -4572,43 +4387,50 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Path_itemContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Path_itemContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(ModelParser.NameContext, 0)
+            return self.getTypedRuleContext(ModelParser.NameContext,0)
 
-        def path_index(self, i: int = None):
+
+        def path_index(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(ModelParser.Path_indexContext)
             else:
-                return self.getTypedRuleContext(ModelParser.Path_indexContext, i)
+                return self.getTypedRuleContext(ModelParser.Path_indexContext,i)
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_path_item
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterPath_item"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterPath_item" ):
                 listener.enterPath_item(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitPath_item"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitPath_item" ):
                 listener.exitPath_item(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitPath_item"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPath_item" ):
                 return visitor.visitPath_item(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def path_item(self):
 
         localctx = ModelParser.Path_itemContext(self, self._ctx, self.state)
         self.enterRule(localctx, 100, self.RULE_path_item)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 599
@@ -4616,7 +4438,7 @@ class ModelParser(Parser):
             self.state = 608
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == ModelParser.T__48:
+            if _la==ModelParser.T__48:
                 self.state = 600
                 self.match(ModelParser.T__48)
                 self.state = 601
@@ -4624,14 +4446,16 @@ class ModelParser(Parser):
                 self.state = 604
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la == ModelParser.T__8:
+                if _la==ModelParser.T__8:
                     self.state = 602
                     self.match(ModelParser.T__8)
                     self.state = 603
                     self.path_index()
 
+
                 self.state = 606
                 self.match(ModelParser.T__49)
+
 
         except RecognitionException as re:
             localctx.exception = re
@@ -4641,9 +4465,11 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Path_indexContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Path_indexContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4653,25 +4479,28 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_path_index
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterPath_index"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterPath_index" ):
                 listener.enterPath_index(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitPath_index"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitPath_index" ):
                 listener.exitPath_index(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitPath_index"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPath_index" ):
                 return visitor.visitPath_index(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def path_index(self):
 
         localctx = ModelParser.Path_indexContext(self, self._ctx, self.state)
         self.enterRule(localctx, 102, self.RULE_path_index)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.state = 616
             self._errHandler.sync(self)
@@ -4680,6 +4509,7 @@ class ModelParser(Parser):
                 self.enterOuterAlt(localctx, 1)
                 self.state = 610
                 self.match(ModelParser.INTEGER)
+                pass
             elif token in [ModelParser.T__50]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 611
@@ -4687,12 +4517,14 @@ class ModelParser(Parser):
                 self.state = 614
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la == ModelParser.T__16:
+                if _la==ModelParser.T__16:
                     self.state = 612
                     self.match(ModelParser.T__16)
                     self.state = 613
                     self.match(ModelParser.INTEGER)
 
+
+                pass
             else:
                 raise NoViableAltException(self)
 
@@ -4704,9 +4536,11 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class NameContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class NameContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -4722,43 +4556,33 @@ class ModelParser(Parser):
         def getRuleIndex(self):
             return ModelParser.RULE_name
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterName"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterName" ):
                 listener.enterName(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitName"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitName" ):
                 listener.exitName(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitName"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitName" ):
                 return visitor.visitName(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def name(self):
 
         localctx = ModelParser.NameContext(self, self._ctx, self.state)
         self.enterRule(localctx, 104, self.RULE_name)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 618
             _la = self._input.LA(1)
-            if not (
-                (
-                    (((_la - 64)) & ~0x3F) == 0
-                    and (
-                        (1 << (_la - 64))
-                        & (
-                            (1 << (ModelParser.FUNCTION - 64))
-                            | (1 << (ModelParser.KEYWORD - 64))
-                            | (1 << (ModelParser.NAME - 64))
-                        )
-                    )
-                    != 0
-                )
-            ):
+            if not(((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (ModelParser.FUNCTION - 64)) | (1 << (ModelParser.KEYWORD - 64)) | (1 << (ModelParser.NAME - 64)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -4771,28 +4595,34 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class Stmt_endContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class Stmt_endContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_stmt_end
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterStmt_end"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterStmt_end" ):
                 listener.enterStmt_end(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitStmt_end"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitStmt_end" ):
                 listener.exitStmt_end(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitStmt_end"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStmt_end" ):
                 return visitor.visitStmt_end(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def stmt_end(self):
 
@@ -4801,15 +4631,18 @@ class ModelParser(Parser):
         try:
             self.state = 622
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input, 73, self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,73,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 620
                 self.match(ModelParser.T__51)
+                pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.wasNewline()
+                # self.wasNewline(); 
+                pass
+
 
         except RecognitionException as re:
             localctx.exception = re
@@ -4819,61 +4652,45 @@ class ModelParser(Parser):
             self.exitRule()
         return localctx
 
-    class CompareContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+    class CompareContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
 
         def getRuleIndex(self):
             return ModelParser.RULE_compare
 
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterCompare"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCompare" ):
                 listener.enterCompare(self)
 
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitCompare"):
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCompare" ):
                 listener.exitCompare(self)
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitCompare"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCompare" ):
                 return visitor.visitCompare(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def compare(self):
 
         localctx = ModelParser.CompareContext(self, self._ctx, self.state)
         self.enterRule(localctx, 108, self.RULE_compare)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 624
             _la = self._input.LA(1)
-            if not (
-                (
-                    ((_la) & ~0x3F) == 0
-                    and (
-                        (1 << _la)
-                        & (
-                            (1 << ModelParser.T__11)
-                            | (1 << ModelParser.T__52)
-                            | (1 << ModelParser.T__53)
-                            | (1 << ModelParser.T__54)
-                            | (1 << ModelParser.T__55)
-                            | (1 << ModelParser.T__56)
-                            | (1 << ModelParser.T__57)
-                            | (1 << ModelParser.T__58)
-                            | (1 << ModelParser.T__59)
-                            | (1 << ModelParser.T__60)
-                            | (1 << ModelParser.T__61)
-                            | (1 << ModelParser.T__62)
-                        )
-                    )
-                    != 0
-                )
-            ):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ModelParser.T__11) | (1 << ModelParser.T__52) | (1 << ModelParser.T__53) | (1 << ModelParser.T__54) | (1 << ModelParser.T__55) | (1 << ModelParser.T__56) | (1 << ModelParser.T__57) | (1 << ModelParser.T__58) | (1 << ModelParser.T__59) | (1 << ModelParser.T__60) | (1 << ModelParser.T__61) | (1 << ModelParser.T__62))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -4885,3 +4702,8 @@ class ModelParser(Parser):
         finally:
             self.exitRule()
         return localctx
+
+
+
+
+
