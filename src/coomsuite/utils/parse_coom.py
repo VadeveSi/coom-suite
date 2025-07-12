@@ -438,10 +438,10 @@ class COOMFeature:
 class COOMStructure:
     """ Dataclass representing a coom structure."""
     name: str
-    features: list[COOMFeature] = field(default_factory=list)
+    features: dict(str,COOMFeature) = field(default_factory=dict)
 
     def add_feature(self, feature):
-        self.features.append(feature)
+        self.features[feature.name] = feature
 
 # from enum import Enum
 # 
@@ -529,6 +529,7 @@ class IDPModelVisitor(ModelVisitor):
         self.features: dict(str, COOMFeature) = {}
 
         self.open_terms: list[str] = []  # used to puzzle together formulas in FO(.) form.
+        self.open_quantification: str = ''
         self.formulas: list[str] = []  # finalized formulas in FO(.) form.
 
     def kb(self):
@@ -557,7 +558,7 @@ class IDPModelVisitor(ModelVisitor):
                 voc.append(f'{feat.name}_included: {feat.name}_id -> Bool')
 
                 # Finally, the functions representing
-                for subfeat in self.structures[feat.type_].features:
+                for subfeat in self.structures[feat.type_].features.values():
                     res_list = subfeat.to_decl([f'{feat.name}_id'], self.enumerations, self.structures)
                     for res in res_list:
                         voc.append(f'{feat.name}_{res[0]}: {"*".join(res[1])} -> {res[2]}'
@@ -878,6 +879,7 @@ class IDPModelVisitor(ModelVisitor):
 
     def visitFormula_sign(self, ctx: ModelParser.Formula_signContext):
         complete = ctx.getText()
+        super().visitFormula_sign(ctx)
         if ctx.formula_sign() is not None:
             if ctx.neg is not None:
                 negated = ctx.formula_sign().getText()
@@ -896,7 +898,15 @@ class IDPModelVisitor(ModelVisitor):
                     self.output_asp.append(f'function("{self.context}","{complete}","{func}","{f.getText()}").')
                 else:
                     self.output_asp.append(f'unary("{complete}","{func}","{f.getText()}").')
-        super().visitFormula_sign(ctx)
+
+                match str(func):
+                    case "sum":
+                        term = f'sum{{{{{self.open_terms[-1]} | {self.open_quantification} }}}}'
+                        self.open_terms.pop()
+                        self.open_terms.append(term)
+                    case default:
+                        raise NotImplementedError(default)
+
 
     def visitPath(self, ctx: ModelParser.PathContext):
         # Only do this for actual paths? Not formulas
@@ -922,18 +932,22 @@ class IDPModelVisitor(ModelVisitor):
         else:
             current_type = None  # This tracks the current type of the symbol in the path.
                                  # I.e., for "frontWheel.size", the current_type of `size` would be `Wheel`
-
+            parent: None | COOMFeature | COOMStructure | COOMEnumeration = None
             full_fodot = ''
             for symbol in full_path:
-                if current_type is None:
-                    # First symbol of path can always be translated directly.
-                    if symbol in self.features:
+                if parent is None:
+                    assert symbol in self.features, "This is impossible?"
+
+                    current_type = self.features[symbol].type_
+                    parent = self.features[symbol]
+                    if current_type not in self.structures:
+                        # First symbol of path can always be translated directly if it does not map on a structure.
                         full_fodot = f'{symbol}()'
-                        current_type = self.features[symbol].type_
-                        continue
                     else:
-                        # This is impossible?
-                        raise NotImplementedError()
+                        # If the symbol maps on a structure, we ignore it (and add quantification variable later)
+                        full_fodot = 'x1'
+                        self.open_quantification = f'x1 in {symbol}_included'
+                    continue
                 else:
                     # full_symbol = f'{current_type}_{symbol}'
                     if current_type in self.features:
@@ -942,10 +956,15 @@ class IDPModelVisitor(ModelVisitor):
                     elif current_type in self.enumerations:
                         # Symbol is attribute of an enumeration
                         full_fodot = f'{current_type}_{symbol}({full_fodot})'
-                    else:
+                    elif current_type in self.structures:
                         # In structures
-                        raise NotImplementedError()
-                    # breakpoint()
+                        # full_fodot = 'x1'
+                        # self.open_quantification = f'x1 in {current_type}_id'
+                        full_fodot = f'{parent.name}_{symbol}({full_fodot})'
+                        current_type = self.structures[current_type].features[symbol].type_
+                        # raise NotImplementedError()
+                    else:
+                        raise Exception("Panic, unreachable code!")
 
             self.open_terms.append(full_fodot)
 
