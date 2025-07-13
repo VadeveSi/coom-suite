@@ -428,11 +428,12 @@ class COOMFeature:
         else:
             # type is structure. Complex. :-(
             decls = []
-            for feat in structures[self.type_].features:
+            for feat in structures[self.type_].features.values():
                 res_tuple = feat.to_decl(input_types, enumerations, structures)
                 for res in res_tuple:
                     decls.append((f'{self.name}_{res[0]}', res[1], res[2]))
             return decls
+
 
 @dataclass
 class COOMStructure:
@@ -443,67 +444,96 @@ class COOMStructure:
     def add_feature(self, feature):
         self.features[feature.name] = feature
 
-# from enum import Enum
-# 
-# 
-# class COOMOperatorEnum(Enum):
-#     # Operators in FO(.) format.
-#     EQ = '='
-#     GT = '>'
-#     GE = '>='
-#     LT = '<'
-#     LE = '=<'
-#     NEQ = '~='
-# 
-#     @staticmethod
-#     def from_str(oper):
-#         match oper:
-#             case '=':
-#                 return COOMOperatorEnum.EQ
-#             case '>':
-#                 return COOMOperatorEnum.GT
-#             case '>=':
-#                 return COOMOperatorEnum.GE
-#             case '<':
-#                 return COOMOperatorEnum.LT
-#             case '<=':
-#                 return COOMOperatorEnum.LE
-#             case '!=':
-#                 return COOMOperatorEnum.NEQ
-# 
-# 
-# 
-# @dataclass
-# class COOMPath:
-#     """ Dataclass representing a coom path. """
-#     child: COOMFeature | COOMPath
-# 
-# @dataclass
-# class COOMComparison:
-#     """ Dataclass representing a coom comparison. """
-#     left: str | COOMFeature
-#     right = str | COOMFeature
-#     operator: COOMOperatorEnum
-# 
-# @dataclass
-# class COOMRequire:
-#     """ Dataclass representing a coom require. """
-#     require: COOMComparison
-#     condition: COOMComparison | None = None
-#     explanation: str | None = None
-# 
-# @dataclass
-# class COOMCombinations:
-#     """ Dataclass representing a COOM. """
-# 
-# 
-# @dataclass
-# class COOMBehavior:
-#     """" Dataclass representing a behavior. """
-#     name: str = ''
-#     constraints: list[COOMRequire | COOMCombinations] = field(default_factory=list)
+    def has_feature_on_type(self, type_) -> [COOMFeature]:
+        return list(filter(lambda x: x.type_ == type_, self.features.values()))
 
 
+@dataclass
+class COOMPath:
+    """ Dataclass representing a COOM path. """
+    symbol: str
+    parent: COOMPath | None = None
+    type_: str = ''
+    maps_on_enumeration: bool = False
+    maps_on_structure: bool = False
+    child: None | COOMPath = None
+    is_feature: bool = False
+    is_elem: bool = False  # Element of an enumeration
+    is_attribute: bool = False  # Attribute of an enumeration
+
+    def populate(self, path, features, enumerations, structures):
+        # First elem is always the path itself.
+        # We begin by figuring out what this elem represents
+        if self.symbol in features:
+            self.type_ = features[self.symbol].type_
+            self.is_feature = True
+        elif self.symbol in enumerations:
+            pass
+        elif self.symbol in structures:
+            pass
+        elif self.parent and self.parent.type_ in enumerations:
+            # Attribute
+            self.is_attribute = True
+        elif self.parent and self.parent.type_ in structures:
+            self.type_ = structures[self.parent.type_].features[self.symbol].type_
+            self.is_feature = True
+        else:
+            # Must be an element
+            self.is_elem = True
+            assert len(path) == 1, "Panic"
+        # if self.symbol == 'volume':
+        #     breakpoint()
+
+        if self.type_ in enumerations:
+            self.maps_on_enumeration = True
+        elif self.type_ in structures:
+            self.maps_on_structure = True
+
+        # Recursively populate children.
+        if len(path) > 1:
+            self.child = COOMPath(symbol=path[1], parent=self)
+            self.child.populate(path[1:], features, enumerations, structures)
+
+    def struct_parent(self):
+        """ Returns chain of parents that map on structures """
+        if self.parent and self.maps_on_structure:
+            parents = self.parent.struct_parent()
+            parents.append(self.symbol)
+        else:
+            parents = [self.symbol]
+        return parents
+
+    def to_fodot(self, term='', quant=''):
+        # child_fodot = self.child.to_fodot() if self.child else ''
+        if self.is_feature:
+            if not self.parent:
+                if self.maps_on_structure:
+                    # Introduce quant
+                    term = 'x'
+                    quant = f'x in {self.symbol}_included'
+                else:
+                    term = f'{self.symbol}({term})'
+            else:
+                if self.maps_on_structure:
+                    term = term
+                else:
+                    # Recursively find parents which map on structures.
+                    parents = self.parent.struct_parent()
+                    term = f'{"_".join(parents)}_{self.symbol}({term})'
+        elif self.is_elem:
+            term = f'{self.symbol}'
+        elif self.is_attribute:
+            term = f'{self.parent.type_}_{self.symbol}({term})'
+        else:
+            term = ''
+        print(term)
+
+        if self.child:
+            return self.child.to_fodot(term, quant)
+        else:
+            return term, quant
+
+        # Blabla
 
 class IDPModelVisitor(ModelVisitor):
     """
@@ -527,6 +557,7 @@ class IDPModelVisitor(ModelVisitor):
         self.enumerations: dict(str, COOMEnumeration) = {}
         self.structures: dict(str, COOMStructure) = {}
         self.features: dict(str, COOMFeature) = {}
+        self.prepend_path: list[str] = []
 
         self.open_terms: list[str] = []  # used to puzzle together formulas in FO(.) form.
         self.open_quantification: str = ''
@@ -563,17 +594,25 @@ class IDPModelVisitor(ModelVisitor):
                     for res in res_list:
                         voc.append(f'{feat.name}_{res[0]}: {"*".join(res[1])} -> {res[2]}'
                                    f' (domain: {feat.name}_included)')
-        print('\n\t'.join(voc) + '\n}')
+        # print('\n\t'.join(voc) + '\n}')
+        kb = '\n\t'.join(voc) + '\n}'
 
         formulas = "\n\t".join((f'{x}.' for x in self.formulas))
-        print(f'theory {{\n {formulas}\n }}')
+        # print(f'theory {{\n {formulas}\n }}')
+        kb += f'\ntheory {{\n {formulas}\n }}'
 
         struc = ['structure {']
         for enum in self.enumerations.values():
             struc += enum.to_fodot_struc()
-        print('\n\t'.join(struc) + '\n}')
+        # print('\n\t'.join(struc) + '\n}')
+        kb += '\n\t'.join(struc) + '\n}\n'
 
-        print('procedure main() { pretty_print(model_expand(T,S))}')
+        # print('procedure main() { pretty_print(model_expand(T,S))}')
+        kb += 'procedure main() { pretty_print(model_expand(T,S))}'
+        return kb
+
+    def has_feature_on_type(self, type_) -> [COOMFeature]:
+        return list(filter(lambda x: x.type_ == type_, self.features.values()))
 
 
     def visitProduct(self, ctx: ModelParser.ProductContext):
@@ -607,8 +646,65 @@ class IDPModelVisitor(ModelVisitor):
     def visitBehavior(self, ctx: ModelParser.BehaviorContext):
         if ctx.name() is not None:
             self.context = ctx.name().getText()
-        super().visitBehavior(ctx)
 
+        if self.context != self.root_name:
+            # If we are in a structure-specific behavior, we need to generate
+            # the behavior for each feature of this type.
+            # This is tricky, as there can be multiple full paths.
+            # This code generates a "prepend_path" for each 
+            # Warning: here be dragons. Can most likely be simplified.
+
+            # Start by finding all structures that have at least one feature of this type.
+            [(name, struct) for (name, struct) in self.structures.items()]
+            structures = list(filter(lambda x: x.has_feature_on_type(self.context), self.structures.values()))
+            for structure in structures:
+                # For each structure, find all features on the type, and
+                # generate their path to the root feature.
+                # We always keep track of multiple paths, which are flattened
+                # at the end. E.g., `[[foo], [bar, bop]]` is actually two paths:
+                # foo -> bar and foo -> bop.
+                feats = structure.has_feature_on_type(self.context)
+                paths = [[x.name for x in feats]]
+
+                context = structure.name
+                # Find all path nodes between this one and the root product.
+                while context not in [x.type_ for x in self.features.values()]:
+                    for struct_name, struct in self.structures.items():
+                        if feats := struct.has_feature_on_type(context):
+                            context = struct_name
+                            paths.append([x.name for x in feats])
+
+                # Flatten the paths.
+                full_paths = [paths[-1]]
+                for segment in paths[::-1][1:]:
+                    if len(segment) == 1:
+                        for i in range(len(full_paths)):
+                            full_paths[i].append(segment[0])
+                    elif len(segment) > 1:
+                        # Copy the existing paths for each segment. E.g.
+                        # [[foo], [bar]] becomes [[foo], [bar], [foo], [bar]]
+                        new_list = []
+                        for i in range(len(segment)):
+                            for j in range(len(full_paths)):
+                                new_list.append(full_paths[j].copy())
+                        full_paths = new_list
+                        for i in range(len(full_paths)):
+                            full_paths[i].append(segment[i%len(segment)])
+
+                for path in full_paths:
+                    feats = self.has_feature_on_type(context)
+                    for feat in feats:
+                        # For each prepend path, generate the constraints of the behavior.
+                        prepend_path = path.copy()
+                        prepend_path.insert(0, feat.name)
+                        self.prepend_path = prepend_path
+                        super().visitBehavior(ctx)
+
+        else:
+            super().visitBehavior(ctx)
+
+        # Reset.
+        self.prepend_path = []
         self.context = self.root_name
 
     def visitFeature(self, ctx: ModelParser.FeatureContext):
@@ -730,7 +826,12 @@ class IDPModelVisitor(ModelVisitor):
                     term.append(f'{symbol} in {{{value}}}')
             terms.append('(' + ' & '.join(term) + ')')
 
-        self.formulas.append(' | '.join(terms))
+        if self.open_quantification:
+            quant = f'!{self.open_quantification}: '
+            self.open_quantification = ''
+        else:
+            quant = ''
+        self.formulas.append(quant + ' | '.join(terms))
 
         self.open_terms = [] 
         self.row_idx = 0
@@ -763,13 +864,19 @@ class IDPModelVisitor(ModelVisitor):
         condition = f'"{ctx.condition().getText()}"'
         self.output_asp.append(f"require({self.constraint_idx},{condition}).")
 
+        if self.open_quantification:
+            quant = f'!{self.open_quantification}: '
+            self.open_quantification = ''  # consume
+        else:
+            quant = ''
+
         if len(self.open_terms) == 2:
-            term = f'{self.open_terms[-2]} => {self.open_terms[-1]}'
+            term = f'{quant}{self.open_terms[-2]} => {self.open_terms[-1]}'
             self.open_terms.pop()
             self.open_terms.pop()
             self.formulas.append(term)
         elif len(self.open_terms) == 1:
-            term = f'{self.open_terms[-1]}'  # Require with no condition
+            term = f'{quant}{self.open_terms[-1]}'  # Require with no condition
             self.open_terms.pop()
             self.formulas.append(term)
         else:
@@ -827,6 +934,7 @@ class IDPModelVisitor(ModelVisitor):
             #     self.output_asp.append(f'binary("{complete_prop}","{complete}","&&","{right_prop}").')
 
             # TODO: reimplement open_terms using LIFO?
+            compare = '=<' if compare == '<=' else compare
             term = f'{self.open_terms[-2]} {compare} {self.open_terms[-1]}'
             self.open_terms.pop()
             self.open_terms.pop()
@@ -834,12 +942,17 @@ class IDPModelVisitor(ModelVisitor):
 
     def visitFormula_add(self, ctx: ModelParser.Formula_addContext):
         form_sub: ModelParser.Formula_subContext = ctx.formula_sub()
+        super().visitFormula_add(ctx)
         for i in range(len(form_sub) - 1):
             left = form_sub[i].getText()
             right = "+".join([a.getText() for a in form_sub[i + 1 :]])
             complete = left + "+" + right
             self.output_asp.append(f'binary("{complete}","{left}","+","{right}").')
-        super().visitFormula_add(ctx)
+            
+            term = f'{self.open_terms[-2]} + {self.open_terms[-1]}'
+            self.open_terms.pop()
+            self.open_terms.pop()
+            self.open_terms.append(term)
 
     def visitFormula_sub(self, ctx: ModelParser.Formula_subContext):
         form_mul: ModelParser.Formula_mulContext = ctx.formula_mul()
@@ -904,6 +1017,13 @@ class IDPModelVisitor(ModelVisitor):
                         term = f'sum{{{{{self.open_terms[-1]} | {self.open_quantification} }}}}'
                         self.open_terms.pop()
                         self.open_terms.append(term)
+                        self.open_quantification = ''
+                    case "count":
+                        term = f'#{{{self.open_quantification}}}'
+
+                        self.open_terms.pop()
+                        self.open_terms.append(term)
+                        self.open_quantification = ''
                     case default:
                         raise NotImplementedError(default)
 
@@ -920,53 +1040,15 @@ class IDPModelVisitor(ModelVisitor):
                     self.output_asp.append(f'path("{full_path}",{i},"{p.getText()}").')
         else:
             return
-        full_path = full_path.split('.')
-        if len(full_path) == 1:
-            # Straightforward constant or enum element.
-            if (symbol:=full_path[0]) in self.features:
-                # Feature translated to applied symbol
-                self.open_terms.append(f'{symbol}()')
-            else:
-                # Enum element translated to type element.
-                self.open_terms.append(f'{symbol}')
-        else:
-            current_type = None  # This tracks the current type of the symbol in the path.
-                                 # I.e., for "frontWheel.size", the current_type of `size` would be `Wheel`
-            parent: None | COOMFeature | COOMStructure | COOMEnumeration = None
-            full_fodot = ''
-            for symbol in full_path:
-                if parent is None:
-                    assert symbol in self.features, "This is impossible?"
+        full_path = self.prepend_path + full_path.split('.')
+        parent_paths = []
 
-                    current_type = self.features[symbol].type_
-                    parent = self.features[symbol]
-                    if current_type not in self.structures:
-                        # First symbol of path can always be translated directly if it does not map on a structure.
-                        full_fodot = f'{symbol}()'
-                    else:
-                        # If the symbol maps on a structure, we ignore it (and add quantification variable later)
-                        full_fodot = 'x1'
-                        self.open_quantification = f'x1 in {symbol}_included'
-                    continue
-                else:
-                    # full_symbol = f'{current_type}_{symbol}'
-                    if current_type in self.features:
-                        # This is impossible?
-                        raise NotImplementedError()
-                    elif current_type in self.enumerations:
-                        # Symbol is attribute of an enumeration
-                        full_fodot = f'{current_type}_{symbol}({full_fodot})'
-                    elif current_type in self.structures:
-                        # In structures
-                        # full_fodot = 'x1'
-                        # self.open_quantification = f'x1 in {current_type}_id'
-                        full_fodot = f'{parent.name}_{symbol}({full_fodot})'
-                        current_type = self.structures[current_type].features[symbol].type_
-                        # raise NotImplementedError()
-                    else:
-                        raise Exception("Panic, unreachable code!")
-
-            self.open_terms.append(full_fodot)
+        p = COOMPath(full_path[0])
+        p.populate(full_path, self.features, self.enumerations, self.structures)
+        path, quant = p.to_fodot()
+        self.open_terms.append(path)
+        if quant:
+            self.open_quantification = quant
 
     def visitFloating(self, ctx: ModelParser.FloatingContext):
         # if ctx.FLOATING() is not None:
