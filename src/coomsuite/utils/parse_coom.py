@@ -956,30 +956,45 @@ class IDPModelVisitor(ModelVisitor):
 
     def visitFormula_sub(self, ctx: ModelParser.Formula_subContext):
         form_mul: ModelParser.Formula_mulContext = ctx.formula_mul()
+        super().visitFormula_sub(ctx)
         for i in range(len(form_mul) - 1):
             left = form_mul[i].getText()
             right = "-".join([a.getText() for a in form_mul[i + 1 :]])
             complete = left + "-" + right
             self.output_asp.append(f'binary("{complete}","{left}","-","{right}").')
-        super().visitFormula_sub(ctx)
+
+            term = f'{self.open_terms[-2]} - {self.open_terms[-1]}'
+            self.open_terms.pop()
+            self.open_terms.pop()
+            self.open_terms.append(term)
 
     def visitFormula_mul(self, ctx: ModelParser.Formula_mulContext):
         form_div: ModelParser.Formula_divContext = ctx.formula_div()
+        super().visitFormula_mul(ctx)
         for i in range(len(form_div) - 1):
             left = form_div[i].getText()
             right = "*".join([a.getText() for a in form_div[i + 1 :]])
             complete = left + "*" + right
             self.output_asp.append(f'binary("{complete}","{left}","*","{right}").')
-        super().visitFormula_mul(ctx)
+
+            term = f'{self.open_terms[-2]} * {self.open_terms[-1]}'
+            self.open_terms.pop()
+            self.open_terms.pop()
+            self.open_terms.append(term)
 
     def visitFormula_div(self, ctx: ModelParser.Formula_divContext):
         form_pow: ModelParser.Formula_powContext = ctx.formula_pow()
+        super().visitFormula_div(ctx)
         for i in range(len(form_pow) - 1):
             left = form_pow[i].getText()
             right = "/".join([a.getText() for a in form_pow[i + 1 :]])
             complete = left + "/" + right
             self.output_asp.append(f'binary("{complete}","{left}","/","{right}").')
-        super().visitFormula_div(ctx)
+
+            term = f'{self.open_terms[-2]} / {self.open_terms[-1]}'
+            self.open_terms.pop()
+            self.open_terms.pop()
+            self.open_terms.append(term)
 
     def visitFormula_pow(self, ctx: ModelParser.Formula_powContext):
         form_sign: ModelParser.Formula_signContext = ctx.formula_sign()
@@ -988,6 +1003,7 @@ class IDPModelVisitor(ModelVisitor):
             right = "^".join([a.getText() for a in form_sign[i + 1 :]])
             complete = left + "^" + right
             self.output_asp.append(f'binary("{complete}","{left}","^","{right}").')
+            raise NotImplementedError(":-(")
         super().visitFormula_pow(ctx)
 
     def visitFormula_sign(self, ctx: ModelParser.Formula_signContext):
@@ -1040,7 +1056,12 @@ class IDPModelVisitor(ModelVisitor):
                     self.output_asp.append(f'path("{full_path}",{i},"{p.getText()}").')
         else:
             return
-        full_path = self.prepend_path + full_path.split('.')
+
+        if full_path.count('.') == 0 and any(True if full_path in x.options else False for x in self.enumerations.values()):
+            # We don't need to prepend the path for domain elements.
+            full_path = [full_path]
+        else:
+            full_path = self.prepend_path + full_path.split('.')
         parent_paths = []
 
         p = COOMPath(full_path[0])
