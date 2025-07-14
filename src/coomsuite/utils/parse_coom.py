@@ -548,7 +548,6 @@ class COOMPath:
             term = f'{self.parent.type_}_{self.symbol}({term})'
         else:
             term = ''
-        print(term)
 
         if self.child:
             return self.child.to_fodot(term, quant)
@@ -630,7 +629,7 @@ class IDPModelVisitor(ModelVisitor):
 
         formulas = "\n\t".join((f'{x}.' for x in self.formulas))
         # print(f'theory {{\n {formulas}\n }}')
-        kb += f'\ntheory {{\n {formulas}\n }}'
+        kb += f'\ntheory {{\n\t{formulas}\n}}\n'
 
         struc = ['structure {']
         for enum in self.enumerations.values():
@@ -639,7 +638,7 @@ class IDPModelVisitor(ModelVisitor):
         kb += '\n\t'.join(struc) + '\n}\n'
 
         # print('procedure main() { pretty_print(model_expand(T,S))}')
-        kb += 'procedure main() { pretty_print(model_expand(T,S))}'
+        kb += 'procedure main() { pretty_print(model_expand(T,S,timeout_seconds=0,max=1))}'
         return kb
 
     def has_feature_on_type(self, type_) -> [COOMFeature]:
@@ -828,7 +827,7 @@ class IDPModelVisitor(ModelVisitor):
             self.constraint_idx += 1
 
     def visitExplanation(self, ctx: ModelParser.ExplanationContext):
-        self.open_explain = ctx.name().getText()[1:-1]  # Strip the "
+        self.open_explain = '[' + ctx.name().getText()[1:-1] + ']'  # Strip the "
         self.output_asp.append(f"explanation({self.constraint_idx},{ctx.name().getText()}).")
         return super().visitExplanation(ctx)
 
@@ -843,6 +842,19 @@ class IDPModelVisitor(ModelVisitor):
         formula = ctx.formula().getText()
         self.output_asp.append(f'imply({self.constraint_idx},"{path}","{formula}").')
         super().visitAssign_imply(ctx)
+
+        # Last two open terms are the consequent of the imply.
+        consequent = f'{self.open_terms[-2]} = {self.open_terms[-1]}'
+        self.open_terms.pop()
+        self.open_terms.pop()
+
+        # Any remaining terms form the condition of the implication
+        quant = f'!{", ".join(self.open_quantifications)}: ' if self.open_quantifications else ''
+        if antecedent := " & ".join(self.open_terms):
+            self.formulas.append(f'{self.open_explain}\n\t{quant}{antecedent} => {consequent}')
+        else:
+            self.formulas.append(f'{self.open_explain}\n\t{quant}{consequent}')
+        self.open_terms = []
 
     def visitCombinations(self, ctx: ModelParser.CombinationsContext):
         for i, f in enumerate(ctx.formula()):
@@ -864,7 +876,9 @@ class IDPModelVisitor(ModelVisitor):
                 elif value == '-*-':
                     pass
                 else: 
-                    term.append(f'{symbol} in {{{value}}}')
+                    # For SLI
+                    term.append('(' + ' | '.join([f'{symbol} = {x}' for x in value.split(' ')]) + ')')
+                    # term.append(f'{symbol} in {{{value}}}')
             terms.append('(' + ' & '.join(term) + ')')
 
         if self.open_quantifications:
@@ -872,7 +886,7 @@ class IDPModelVisitor(ModelVisitor):
             self.open_quantifications = set()
         else:
             quant = ''
-        self.formulas.append(f'[{self.open_explain}]\n\t{quant}{" | ".join(terms)}')
+        self.formulas.append(f'{self.open_explain}\n\t{quant}{" | ".join(terms)}')
 
         self.open_terms = [] 
         self.row_idx = 0
@@ -911,13 +925,15 @@ class IDPModelVisitor(ModelVisitor):
         else:
             quant = ''
 
-        if len(self.open_terms) == 2:
-            term = f'[{self.open_explain}]\n\t{quant}{self.open_terms[-2]} => {self.open_terms[-1]}'
+        if len(self.open_terms) > 2:
+            consequent = self.open_terms[-1]
             self.open_terms.pop()
-            self.open_terms.pop()
+            antecedent = ' & '.join(self.open_terms)
+            term = f'{self.open_explain}\n\t{quant}{antecedent} => {consequent}'
+            self.open_terms = []
             self.formulas.append(term)
         elif len(self.open_terms) == 1:
-            term = f'[{self.open_explain}]\n\t{quant}{self.open_terms[-1]}'  # Require with no condition
+            term = f'{self.open_explain}\n\t{quant}{self.open_terms[-1]}'  # Require with no condition
             self.open_terms.pop()
             self.formulas.append(term)
         else:
@@ -975,9 +991,22 @@ class IDPModelVisitor(ModelVisitor):
             #     self.output_asp.append(f'binary("{complete_prop}","{complete}","&&","{right_prop}").')
 
             # TODO: reimplement open_terms using LIFO?
-            compare = '=<' if compare == '<=' else compare
-            compare = '~=' if compare == '!=' else compare
-            term = f'{self.open_terms[-2]} {compare} {self.open_terms[-1]}'
+            if self.open_terms[-2] not in {'False', 'True'} and self.open_terms[-1] not in {'False', 'True'}:
+                compare = '=<' if compare == '<=' else compare
+                compare = '~=' if compare == '!=' else compare
+                term = f'{self.open_terms[-2]} {compare} {self.open_terms[-1]}'
+            else:
+                assert compare == '=', f"Cannot use {compare} with bool"
+                if self.open_terms[-2] == 'True':
+                    term = self.open_terms[1]
+                elif self.open_terms[-2] == 'False':
+                    term = f'~{self.open_terms[1]}'
+                elif self.open_terms[-1] == 'True':
+                    term = self.open_terms[-2]
+                elif self.open_terms[-1] == 'False':
+                    term = f'~{self.open_terms[-2]}'
+                else:
+                    assert True, "Unreachable code!"
             self.open_terms.pop()
             self.open_terms.pop()
             self.open_terms.append(term)
