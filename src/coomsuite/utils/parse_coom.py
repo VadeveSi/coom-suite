@@ -411,7 +411,15 @@ class COOMFeature:
         return int(self.ucard) if self.ucard != '#sup' else 10  #TODO: change default
 
     def min_card(self):
-        return 1 if self.ucard == self.lcard == 1 else 0
+        return 1
+
+    def mandatory(self) -> bool:
+        # Feature is mandatory when its min and max card is 1
+        return self.ucard == self.lcard == '1'
+
+    def optional(self) -> bool:
+        # Feature is optional with a lower card of 0
+        return self.lcard == '0'
 
     def to_decl(self, input_types, enumerations, structures):
         """
@@ -433,6 +441,15 @@ class COOMFeature:
                 for res in res_tuple:
                     decls.append((f'{self.name}_{res[0]}', res[1], res[2]))
             return decls
+
+    def card_constraint(self):
+        # Generate the cardinality constraint for the feature.
+        if self.mandatory():
+            return f'{self.name}_included(1)'
+        elif self.optional():
+            return None
+        else:
+            return f'{self.lcard} =< #{{ x in {self.name}_included }} =< {self.ucard}'
 
 
 @dataclass
@@ -579,6 +596,7 @@ class IDPModelVisitor(ModelVisitor):
         for enum in self.enumerations.values():
             voc += enum.to_fodot_voc()
 
+        # Generate the voc declaration for each child of the feature.
         for name, feat in self.features.items():
             if feat.type_ == 'num':
                 # Easy translation
@@ -601,6 +619,11 @@ class IDPModelVisitor(ModelVisitor):
                         type_ = 'Int' if res[2] == 'num' else res[2]
                         voc.append(f'{feat.name}_{res[0]}: {"*".join(res[1])} -> {type_}'
                                    f' (domain: {feat.name}_included)')
+
+                # Also add the cardinality constraint to the formulas.
+                if card_constraint := feat.card_constraint():
+                    self.formulas.append(card_constraint)
+
         # print('\n\t'.join(voc) + '\n}')
         kb = '\n\t'.join(voc) + '\n}'
 
@@ -735,8 +758,8 @@ class IDPModelVisitor(ModelVisitor):
         #     type_name = feature_name
 
         cardinality: ModelParser.CardinalityContext = ctx.cardinality()
-        c_min = 1
-        c_max = 1
+        c_min = '1'
+        c_max = '1'
         if cardinality is not None:
             c_min = cardinality.min.text.replace("x", "")
             c_max = c_min
