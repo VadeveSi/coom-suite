@@ -10,7 +10,7 @@ in a visitor style fashion and outputs ASP facts.
 # mypy: ignore-errors
 import sys
 from __future__ import annotations  # Required for recursive dataclasses
-from typing import List, Optional
+from typing import List, Optional, ClassVar
 
 try:
     from .coom_grammar.model.ModelParser import ModelParser
@@ -461,6 +461,9 @@ class COOMPath:
     is_elem: bool = False  # Element of an enumeration
     is_attribute: bool = False  # Attribute of an enumeration
 
+    # Static class variable to keep track of quantifiers: quant_type -> (quant_var, quant_str)
+    quantifiers: ClassVar[dict(str, tuple(str, str))] = {}
+
     def populate(self, path, features, enumerations, structures):
         # First elem is always the path itself.
         # We begin by figuring out what this elem represents
@@ -481,8 +484,6 @@ class COOMPath:
             # Must be an element
             self.is_elem = True
             assert len(path) == 1, "Panic"
-        # if self.symbol == 'volume':
-        #     breakpoint()
 
         if self.type_ in enumerations:
             self.maps_on_enumeration = True
@@ -509,8 +510,12 @@ class COOMPath:
             if not self.parent:
                 if self.maps_on_structure:
                     # Introduce quant
-                    term = 'x'
-                    quant = f'x in {self.symbol}_included'
+                    if self.symbol in COOMPath.quantifiers:
+                        term, quant = COOMPath.quantifiers[self.symbol]
+                    else:
+                        term = f'x{len(COOMPath.quantifiers)}'
+                        quant = f'{term} in {self.symbol}_included'
+                        COOMPath.quantifiers[self.symbol] = (term, quant)
                 else:
                     term = f'{self.symbol}({term})'
             else:
@@ -533,7 +538,8 @@ class COOMPath:
         else:
             return term, quant
 
-        # Blabla
+    # Static class variable for the quantifier indexes.
+    quant_idx = 0
 
 class IDPModelVisitor(ModelVisitor):
     """
@@ -560,7 +566,7 @@ class IDPModelVisitor(ModelVisitor):
         self.prepend_path: list[str] = []
 
         self.open_terms: list[str] = []  # used to puzzle together formulas in FO(.) form.
-        self.open_quantification: str = ''
+        self.open_quantifications: set(str) = set()
         self.formulas: list[str] = []  # finalized formulas in FO(.) form.
 
     def kb(self):
@@ -592,7 +598,8 @@ class IDPModelVisitor(ModelVisitor):
                 for subfeat in self.structures[feat.type_].features.values():
                     res_list = subfeat.to_decl([f'{feat.name}_id'], self.enumerations, self.structures)
                     for res in res_list:
-                        voc.append(f'{feat.name}_{res[0]}: {"*".join(res[1])} -> {res[2]}'
+                        type_ = 'Int' if res[2] == 'num' else res[2]
+                        voc.append(f'{feat.name}_{res[0]}: {"*".join(res[1])} -> {type_}'
                                    f' (domain: {feat.name}_included)')
         # print('\n\t'.join(voc) + '\n}')
         kb = '\n\t'.join(voc) + '\n}'
@@ -655,8 +662,10 @@ class IDPModelVisitor(ModelVisitor):
             # Warning: here be dragons. Can most likely be simplified.
 
             # Start by finding all structures that have at least one feature of this type.
-            [(name, struct) for (name, struct) in self.structures.items()]
             structures = list(filter(lambda x: x.has_feature_on_type(self.context), self.structures.values()))
+            if self.has_feature_on_type(self.context):
+                structures.append(self)  # In case of a feature of the product.
+
             for structure in structures:
                 # For each structure, find all features on the type, and
                 # generate their path to the root feature.
@@ -666,7 +675,7 @@ class IDPModelVisitor(ModelVisitor):
                 feats = structure.has_feature_on_type(self.context)
                 paths = [[x.name for x in feats]]
 
-                context = structure.name
+                context = structure.name if isinstance(structure, COOMStructure) else self.context
                 # Find all path nodes between this one and the root product.
                 while context not in [x.type_ for x in self.features.values()]:
                     for struct_name, struct in self.structures.items():
@@ -691,15 +700,20 @@ class IDPModelVisitor(ModelVisitor):
                         for i in range(len(full_paths)):
                             full_paths[i].append(segment[i%len(segment)])
 
-                for path in full_paths:
-                    feats = self.has_feature_on_type(context)
-                    for feat in feats:
-                        # For each prepend path, generate the constraints of the behavior.
-                        prepend_path = path.copy()
-                        prepend_path.insert(0, feat.name)
-                        self.prepend_path = prepend_path
+                if isinstance(structure, COOMStructure):
+                    for path in full_paths:
+                        feats = self.has_feature_on_type(context)
+                        for feat in feats:
+                            # For each prepend path, generate the constraints of the behavior.
+                            prepend_path = path.copy()
+                            prepend_path.insert(0, feat.name)
+                            self.prepend_path = prepend_path
+                            super().visitBehavior(ctx)
+                else:
+                    # If the structure is the product itself, only prepend the feat name.
+                    for feat in self.has_feature_on_type(context):
+                        self.prepend_path = [feat.name]
                         super().visitBehavior(ctx)
-
         else:
             super().visitBehavior(ctx)
 
@@ -822,13 +836,15 @@ class IDPModelVisitor(ModelVisitor):
                     term.append(f'{symbol}')
                 elif value == 'False':
                     term.append(f'~{symbol}')
-                else:
+                elif value == '-*-':
+                    pass
+                else: 
                     term.append(f'{symbol} in {{{value}}}')
             terms.append('(' + ' & '.join(term) + ')')
 
-        if self.open_quantification:
-            quant = f'!{self.open_quantification}: '
-            self.open_quantification = ''
+        if self.open_quantifications:
+            quant = f'!{",".join(self.open_quantifications)}: '
+            self.open_quantifications = set()
         else:
             quant = ''
         self.formulas.append(quant + ' | '.join(terms))
@@ -864,9 +880,9 @@ class IDPModelVisitor(ModelVisitor):
         condition = f'"{ctx.condition().getText()}"'
         self.output_asp.append(f"require({self.constraint_idx},{condition}).")
 
-        if self.open_quantification:
-            quant = f'!{self.open_quantification}: '
-            self.open_quantification = ''  # consume
+        if self.open_quantifications:
+            quant = f'!{", ".join(self.open_quantifications)}: '
+            self.open_quantifications = set()  # consume
         else:
             quant = ''
 
@@ -935,6 +951,7 @@ class IDPModelVisitor(ModelVisitor):
 
             # TODO: reimplement open_terms using LIFO?
             compare = '=<' if compare == '<=' else compare
+            compare = '~=' if compare == '!=' else compare
             term = f'{self.open_terms[-2]} {compare} {self.open_terms[-1]}'
             self.open_terms.pop()
             self.open_terms.pop()
@@ -1030,16 +1047,16 @@ class IDPModelVisitor(ModelVisitor):
 
                 match str(func):
                     case "sum":
-                        term = f'sum{{{{{self.open_terms[-1]} | {self.open_quantification} }}}}'
+                        term = f'sum{{{{{self.open_terms[-1]} | {", ".join(self.open_quantifications)} }}}}'
                         self.open_terms.pop()
                         self.open_terms.append(term)
-                        self.open_quantification = ''
+                        self.open_quantifications = set()
                     case "count":
-                        term = f'#{{{self.open_quantification}}}'
+                        term = f'#{{{", ".join(self.open_quantifications)}}}'
 
                         self.open_terms.pop()
                         self.open_terms.append(term)
-                        self.open_quantification = ''
+                        self.open_quantifications = set()
                     case default:
                         raise NotImplementedError(default)
 
@@ -1062,14 +1079,13 @@ class IDPModelVisitor(ModelVisitor):
             full_path = [full_path]
         else:
             full_path = self.prepend_path + full_path.split('.')
-        parent_paths = []
 
         p = COOMPath(full_path[0])
         p.populate(full_path, self.features, self.enumerations, self.structures)
         path, quant = p.to_fodot()
         self.open_terms.append(path)
         if quant:
-            self.open_quantification = quant
+            self.open_quantifications.add(quant)
 
     def visitFloating(self, ctx: ModelParser.FloatingContext):
         # if ctx.FLOATING() is not None:
