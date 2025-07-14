@@ -584,6 +584,7 @@ class IDPModelVisitor(ModelVisitor):
 
         self.open_terms: list[str] = []  # used to puzzle together formulas in FO(.) form.
         self.open_quantifications: set(str) = set()
+        self.open_explain: str = ''
         self.formulas: list[str] = []  # finalized formulas in FO(.) form.
 
     def kb(self):
@@ -827,6 +828,7 @@ class IDPModelVisitor(ModelVisitor):
             self.constraint_idx += 1
 
     def visitExplanation(self, ctx: ModelParser.ExplanationContext):
+        self.open_explain = ctx.name().getText()[1:-1]  # Strip the "
         self.output_asp.append(f"explanation({self.constraint_idx},{ctx.name().getText()}).")
         return super().visitExplanation(ctx)
 
@@ -870,7 +872,7 @@ class IDPModelVisitor(ModelVisitor):
             self.open_quantifications = set()
         else:
             quant = ''
-        self.formulas.append(quant + ' | '.join(terms))
+        self.formulas.append(f'[{self.open_explain}]\n\t{quant}{" | ".join(terms)}')
 
         self.open_terms = [] 
         self.row_idx = 0
@@ -910,12 +912,12 @@ class IDPModelVisitor(ModelVisitor):
             quant = ''
 
         if len(self.open_terms) == 2:
-            term = f'{quant}{self.open_terms[-2]} => {self.open_terms[-1]}'
+            term = f'[{self.open_explain}]\n\t{quant}{self.open_terms[-2]} => {self.open_terms[-1]}'
             self.open_terms.pop()
             self.open_terms.pop()
             self.formulas.append(term)
         elif len(self.open_terms) == 1:
-            term = f'{quant}{self.open_terms[-1]}'  # Require with no condition
+            term = f'[{self.open_explain}]\n\t{quant}{self.open_terms[-1]}'  # Require with no condition
             self.open_terms.pop()
             self.formulas.append(term)
         else:
