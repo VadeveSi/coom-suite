@@ -421,26 +421,48 @@ class COOMFeature:
         # Feature is optional with a lower card of 0
         return self.lcard == '0'
 
-    def to_decl(self, input_types, enumerations, structures):
+    def to_decl(self, input_types, enumerations, structures, parent: str, super_types):
         """
         Recursively generate the declaration of this feature and all its subfeatures
 
         Returns the variables, the name, somethng else probably
         """
+        full_path = f'{parent}_{self.name}'
         if self.type_ == 'num':
             # Easy
-            return [(self.name, input_types, self.type_)]
+            domain_decl = super_types[-1][0:-3] if super_types else None
+            return [(full_path, input_types, self.type_, domain_decl)], [], [], []
         elif self.type_ in enumerations:
             # Also easy
-            return [(self.name, input_types, self.type_)]
+            domain_decl = super_types[-1][0:-3] if super_types else None
+            return [(full_path, input_types, self.type_, domain_decl)], [], [], []
         else:
             # type is structure. Complex. :-(
+            type_decl = f'{full_path}_id'
+            type_decls = [f'{type_decl} := {{0..{self.ucard}}}']
+            domain_decls = [f'{full_path}_included: {" * ".join(super_types + [type_decl])} -> Bool']
+
             decls = []
+            formulas = []
             for feat in structures[self.type_].features.values():
-                res_tuple = feat.to_decl(input_types, enumerations, structures)
+                # Generate type for this struct
+                res_tuple, sub_type_decls, sub_domain_decls, sub_formulas = feat.to_decl(input_types, enumerations, structures, full_path, super_types.copy().append(type_decl))
+                type_decls += sub_type_decls
+                domain_decls += sub_domain_decls
+                formulas += sub_formulas
                 for res in res_tuple:
-                    decls.append((f'{self.name}_{res[0]}', res[1], res[2]))
-            return decls
+                    decls.append((f'{res[0]}', [f'{full_path}_id'] + res[1], res[2], full_path))
+
+            # Extra caveat: we need to introduce additional constraints for
+            # subdomains to ensure a subchild is only active when its parent is.
+            # Example: in restaurant, we can only choose chairs for which the tables
+            # are also chosen. So we add 
+            # `!(x0, x1) in bigTables_chairs_included: bigTables_included(x0).`
+            if super_types:
+                quantors = [f'x{i}' for i in range(len(super_types) + 1)]
+                formula = f'!({", ".join(quantors)}) in {full_path}_included: {parent}_included({", ".join(quantors[:-1])})'
+                formulas.append(formula)
+            return decls, type_decls, domain_decls, formulas
 
     def card_constraint(self):
         # Generate the cardinality constraint for the feature.
@@ -521,38 +543,52 @@ class COOMPath:
             parents = [self.symbol]
         return parents
 
-    def to_fodot(self, term='', quant=''):
+    def to_fodot(self, terms=[], quant='') -> (str, str):
         # child_fodot = self.child.to_fodot() if self.child else ''
+        full_path = '_'.join(self.struct_parent())
         if self.is_feature:
             if not self.parent:
                 if self.maps_on_structure:
                     # Introduce quant
-                    if self.symbol in COOMPath.quantifiers:
-                        term, quant = COOMPath.quantifiers[self.symbol]
+                    if full_path in COOMPath.quantifiers:
+                        term, quant = COOMPath.quantifiers[full_path]
                     else:
                         term = f'x{len(COOMPath.quantifiers)}'
                         quant = f'{term} in {self.symbol}_included'
-                        COOMPath.quantifiers[self.symbol] = (term, quant)
+                        COOMPath.quantifiers[full_path] = (term, quant)
                 else:
-                    term = f'{self.symbol}({term})'
+                    term = f'{self.symbol}({", ".join(terms)})'
             else:
                 if self.maps_on_structure:
-                    term = term
+                    # Also introduce a quantor?
+                    if full_path in COOMPath.quantifiers:
+                        term, quant = COOMPath.quantifiers[full_path]
+                    else:
+                        term = f'x{len(COOMPath.quantifiers)}'
+                        terms.append(term)
+                        quant = f'({", ".join(terms)}) in {"_".join(self.struct_parent())}_included'
+                        COOMPath.quantifiers[full_path] = (term, quant)
                 else:
                     # Recursively find parents which map on structures.
                     parents = self.parent.struct_parent()
-                    term = f'{"_".join(parents)}_{self.symbol}({term})'
+                    term = f'{"_".join(parents)}_{self.symbol}({", ".join(terms)})'
+                    terms = []  # Pop open quantification terms.
         elif self.is_elem:
             term = f'{self.symbol}'
+            terms = []
         elif self.is_attribute:
-            term = f'{self.parent.type_}_{self.symbol}({term})'
+            term = f'{self.parent.type_}_{self.symbol}({", ".join(terms)})'
+            terms = []
         else:
             term = ''
+            terms = []
 
+        if term not in terms:
+            terms.append(term)
         if self.child:
-            return self.child.to_fodot(term, quant)
+            return self.child.to_fodot(terms, quant)
         else:
-            return term, quant
+            return ", ".join(terms), quant
 
     # Static class variable for the quantifier indexes.
     quant_idx = 0
@@ -614,11 +650,22 @@ class IDPModelVisitor(ModelVisitor):
 
                 # Finally, the functions representing
                 for subfeat in self.structures[feat.type_].features.values():
-                    res_list = subfeat.to_decl([f'{feat.name}_id'], self.enumerations, self.structures)
+                    res_list, sub_type_decls, sub_domain_decls, sub_formulas = subfeat.to_decl([f'{feat.name}_id'], self.enumerations, self.structures, feat.name, [f'{feat.name}_id'])
+                    for type_ in sub_type_decls:
+                        voc.append(f'type {type_}')
+                    for domain_decl in sub_domain_decls:
+                        voc.append(domain_decl)
                     for res in res_list:
                         type_ = 'Int' if res[2] == 'num' else res[2]
-                        voc.append(f'{feat.name}_{res[0]}: {"*".join(res[1])} -> {type_}'
-                                   f' (domain: {feat.name}_included)')
+                        if len(res) == 4:
+                            voc.append(f'{res[0]}: {"*".join(res[1][::-1])} -> {type_}'
+                                       f' (domain: {res[3]}_included)')
+                        else:
+                            voc.append(f'{res[0]}: {"*".join(res[1][::-1])} -> {type_}')
+
+                    for formula in sub_formulas:
+                        self.formulas.append(formula)
+
 
                 # Also add the cardinality constraint to the formulas.
                 if card_constraint := feat.card_constraint():
@@ -877,8 +924,8 @@ class IDPModelVisitor(ModelVisitor):
                     pass
                 else: 
                     # For SLI
-                    term.append('(' + ' | '.join([f'{symbol} = {x}' for x in value.split(' ')]) + ')')
-                    # term.append(f'{symbol} in {{{value}}}')
+                    # term.append('(' + ' | '.join([f'{symbol} = {x}' for x in value.split(',')]) + ')')
+                    term.append(f'{symbol} in {{{value}}}')
             terms.append('(' + ' & '.join(term) + ')')
 
         if self.open_quantifications:
@@ -925,7 +972,7 @@ class IDPModelVisitor(ModelVisitor):
         else:
             quant = ''
 
-        if len(self.open_terms) > 2:
+        if len(self.open_terms) > 1:
             consequent = self.open_terms[-1]
             self.open_terms.pop()
             antecedent = ' & '.join(self.open_terms)
@@ -1136,7 +1183,7 @@ class IDPModelVisitor(ModelVisitor):
 
         p = COOMPath(full_path[0])
         p.populate(full_path, self.features, self.enumerations, self.structures)
-        path, quant = p.to_fodot()
+        path, quant = p.to_fodot(terms=[])
         self.open_terms.append(path)
         if quant:
             self.open_quantifications.add(quant)
