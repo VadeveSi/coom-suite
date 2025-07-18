@@ -446,17 +446,19 @@ class COOMFeature:
             formulas = []
             for feat in structures[self.type_].features.values():
                 # Generate type for this struct
-                res_tuple, sub_type_decls, sub_domain_decls, sub_formulas = feat.to_decl(input_types, enumerations, structures, full_path, super_types.copy().append(type_decl))
+                super_types_clone = super_types.copy()
+                super_types_clone.append(type_decl)
+                res_tuple, sub_type_decls, sub_domain_decls, sub_formulas = feat.to_decl(input_types, enumerations, structures, full_path, super_types_clone)
                 type_decls += sub_type_decls
                 domain_decls += sub_domain_decls
                 formulas += sub_formulas
                 for res in res_tuple:
-                    decls.append((f'{res[0]}', [f'{full_path}_id'] + res[1], res[2], full_path))
+                    decls.append((f'{res[0]}', [f'{full_path}_id'] + res[1], res[2], res[3]))
 
             # Extra caveat: we need to introduce additional constraints for
             # subdomains to ensure a subchild is only active when its parent is.
             # Example: in restaurant, we can only choose chairs for which the tables
-            # are also chosen. So we add 
+            # are also chosen. So we add
             # `!(x0, x1) in bigTables_chairs_included: bigTables_included(x0).`
             if super_types:
                 quantors = [f'x{i}' for i in range(len(super_types) + 1)]
@@ -624,9 +626,9 @@ class IDPModelVisitor(ModelVisitor):
 
     def kb(self):
         # Generate KB
-        print(self.enumerations)
-        print(self.structures)
-        print(self.features)
+        # print(self.enumerations)
+        # print(self.structures)
+        # print(self.features)
 
         voc = ['vocabulary {']
         for enum in self.enumerations.values():
