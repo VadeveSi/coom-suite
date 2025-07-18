@@ -8,7 +8,7 @@ from typing import List
 from antlr4 import CommonTokenStream, InputStream
 from clingo import Symbol
 
-from coomsuite.utils.parse_coom import ASPModelVisitor, ASPUserInputVisitor
+from coomsuite.utils.parse_coom import ASPModelVisitor, ASPUserInputVisitor, IDPModelVisitor
 
 from .coom_grammar.model.ModelLexer import ModelLexer
 from .coom_grammar.model.ModelParser import ModelParser
@@ -80,3 +80,17 @@ def coom2asp(c: str) -> str:
         return f'value("root.{path.strip()}",{value.strip()})'
     path = c.strip()
     return f'include("root.{path}")'
+
+
+def run_antlr4_visitor_idp(coom_input_stream: InputStream, grammar: str) -> str:
+    """ Runs the ANLTR4 Visitor to generate an FO(.) file for the IDP-Z3 system. """
+    if grammar == "user":
+        raise NotImplementedError("User grammar parsing for IDP-Z3 is not yet implemented.")
+    lexer = ModelLexer(coom_input_stream)
+    stream = CommonTokenStream(lexer)
+    parser = ModelParser(stream)
+    tree = parser.root()
+    visitor = IDPModelVisitor()
+    visitor.visitRoot(tree)
+    kb = visitor.kb()
+    return kb

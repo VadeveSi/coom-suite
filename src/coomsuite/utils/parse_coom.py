@@ -8,8 +8,8 @@ in a visitor style fashion and outputs ASP facts.
 # flake8: noqa
 # pylint: skip-file
 # mypy: ignore-errors
-import sys
 from __future__ import annotations  # Required for recursive dataclasses
+import sys
 from typing import List, Optional, ClassVar
 
 try:
@@ -810,15 +810,15 @@ class IDPModelVisitor(ModelVisitor):
         c_min = '1'
         c_max = '1'
         if cardinality is not None:
-            c_min = cardinality.min.text.replace("x", "")
+            c_min = cardinality.min_.text.replace("x", "")
             c_max = c_min
-            if cardinality.max is not None:
-                c_max = cardinality.max.text.replace("x", "").replace("*", "#sup")
+            if cardinality.max_ is not None:
+                c_max = cardinality.max_.text.replace("x", "").replace("*", "#sup")
 
         self.output_asp.append(f'feature("{self.structure_name}","{feature_name}","{type_name}",{c_min},{c_max}).')
         if type_name == "num":
             num: ModelParser.Number_defContext = field.number_def()
-            if num.min is not None or num.max is not None:
+            if num.min_ is not None or num.max_ is not None:
                 r_min = "#inf" if num.min.getText() == "-\u221e" else num.min.getText()  # negative infinity symbol
                 r_max = "#sup" if num.max.getText() == "\u221e" else num.max.getText()  # infinity symbol
                 self.output_asp.append(f'range("{self.structure_name}","{feature_name}",{r_min},{r_max}).')

@@ -56,6 +56,9 @@ def get_parser() -> ArgumentParser:
         type=cast(Any, lambda name: get(levels, name)),
     )
 
+    parser.add_argument("--solver", "-s", type=str, help="Set solver", choices=SOLVERS, default="clingo")
+
+
     parser.add_argument("--version", "-v", action="version", version=f"%(prog)s {VERSION}")
 
     subparsers = parser.add_subparsers(help="Sub commands", dest="command")
@@ -93,8 +96,6 @@ def get_parser() -> ArgumentParser:
         help="Path to the COOM model file to solve",
     )
     parser_solve.add_argument("--user-input", "-u", type=str, help="Input the COOM user input.")
-
-    parser_solve.add_argument("--solver", "-s", type=str, help="Set solver", choices=SOLVERS, default="clingo")
 
     parser_solve.add_argument(
         "--output", "-o", type=str, help="Set console output format", choices=["asp", "coom"], default="asp"

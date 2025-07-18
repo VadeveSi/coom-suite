@@ -8,7 +8,7 @@ from typing import List
 
 from clingo.application import clingo_main
 
-from . import convert_instance
+from . import convert_instance, convert_instance_idp
 from .application import COOMSolverApp
 from .preprocess import check_user_input, preprocess
 from .utils.logging import configure_logging, get_logger
@@ -58,7 +58,7 @@ def main():
     # log.debug("debug")
     # log.error("error")
 
-    if args.command == "convert":
+    if args.command == "convert" and args.solver in ["clingo", "fclingo"]:
         asp_instance = convert_instance(args.input, "model", args.output)
 
         if args.user_input:
@@ -70,7 +70,7 @@ def main():
                 print("")
                 print(output_user_lp_file)
 
-    elif args.command == "solve":
+    elif args.command == "solve" and args.solver in ["clingo", "fclingo"]:
         log.info("Converting and solving COOM file %s", args.input)
 
         with TemporaryDirectory() as temp_dir:
@@ -91,6 +91,35 @@ def main():
                     print(f"\nSolving with max_bound = {max_bound}\n")
                     ret = solve(serialized_facts, max_bound, args, unknown_args=unknown_args)
                     max_bound += 1
+
+    elif args.command == "convert" and args.solver == "idp":
+        idp_instance = convert_instance_idp(args.input, "model", None)
+        if args.output is None:
+            print(idp_instance)
+
+            # If pyclip installed, convert the instance to the clipboard.
+            try:
+                import pyclip
+                pyclip.copy(idp_instance)
+            except ModuleNotFoundError:
+                pass
+
+    elif args.command == "solve" and args.solver == "idp":
+        idp_instance = convert_instance_idp(args.input, "model", None)
+
+        from idp_engine import Theory, IDP
+        import time
+
+        start = time.time()
+        idp = IDP.from_str(idp_instance)
+        T, S = idp.get_blocks("T, S")
+        theory = Theory(T, S)
+        for model in theory.expand(max=1, timeout_seconds=0):
+            print(model)
+        print(f"Elapsed time: {round(time.time()-start, 2)}s")
+
+    else:
+        raise Exception(f"Incorrect arguments")
 
 
 if __name__ == "__main__":
